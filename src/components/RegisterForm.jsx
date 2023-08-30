@@ -47,7 +47,7 @@ export default function RegisterForm() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center gap-10 border border-slate-950 p-8 rounded-md">
+    <div className="flex flex-col justify-center items-center gap-10 border border-slate-950 px-8 py-10 rounded-md">
       <h1 className="text-center text-4xl">Sign up</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}

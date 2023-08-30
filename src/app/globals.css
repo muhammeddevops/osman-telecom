@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer utilities {
+  .form-container {
+    @apply flex justify-center items-center h-screen;
+  }
+
   .form-group {
     @apply flex flex-col gap-2 w-[90%];
   }
