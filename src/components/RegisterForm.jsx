@@ -24,26 +24,37 @@ export default function RegisterForm() {
   //! TESTING ONLY
   if (Object.keys(errors).length) console.log('errors:', errors);
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data, e) => {
     console.log('input values:', data);
+    const form = e.target;
 
-    /* try {
-      const res = await fetch("/api/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
+    try {
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        body: new FormData(form),
       });
-      res.status === 201 &&
-        router.push("/dashboard/login?success=Account has been created");
+
+      if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error);
+      }
+
+      const data = await res.json();
+
+      console.log({ data });
+
+      // TODO Handle response
+      // res.status === 201 &&
+      //   router.push('/dashboard/login?success=Account has been created');
     } catch (err) {
-      //   setError(err);
-      //   console.log(err);
-    } */
+      // TODO HANDLE ERRORS - React Hook Form Tutorial
+      // TODO React Toast Error Message
+      // ... OR
+      // TODO Set formError Message & display in form UI
+
+      // setError(err);
+      console.log(err);
+    }
   };
 
   return (
