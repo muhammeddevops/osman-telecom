@@ -17,6 +17,7 @@ export default function RegisterForm() {
     handleSubmit,
     formState: { errors, isSubmitting, touchedFields },
     trigger,
+    setError,
   } = useForm({ mode: 'onTouched' });
   // mode: "onTouched" - validates initially onBlur, subsequently onChanged
   // Same behaviour as default "onSubmit" but validates without having to submit
@@ -25,6 +26,7 @@ export default function RegisterForm() {
   if (Object.keys(errors).length) console.log('errors:', errors);
 
   const onSubmit = async (data, e) => {
+    // throw new Error('I hate error handling');
     console.log('input values:', data);
     const form = e.target;
 
@@ -34,25 +36,49 @@ export default function RegisterForm() {
         body: new FormData(form),
       });
 
+      // HTTP Status not in 200-299 range
       if (!res.ok) {
-        const error = await res.json();
-        throw new Error(error);
+        if (res.status >= 400) throw await res.json();
       }
 
-      const data = await res.json();
+      const resData = await res.json();
 
-      console.log({ data });
+      console.log({ resData });
 
-      // TODO Handle response
+      /**
+       * Handle successful registration 
+       * TODO Log user in & handle JWT --> Next Auth
+        - this should store user in AuthProvider context
+       * TODO Redirect to appropriate page:
+        - home page
+        - or the page that sent them to registration page
+       */
+
       // res.status === 201 &&
       //   router.push('/dashboard/login?success=Account has been created');
     } catch (err) {
-      // TODO HANDLE ERRORS - React Hook Form Tutorial
-      // TODO React Toast Error Message
-      // ... OR
-      // TODO Set formError Message & display in form UI
+      // Handle server-side errors
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`${err.name ?? 'RegistrationError'}:`, err);
+      }
 
-      // setError(err);
+      if (err.name === 'PasswordConfirmationFailed') {
+        setError(`confirmPassword`, {
+          message: err.errors['confirmPassword'],
+        });
+      }
+
+      if (err.name === 'DuplicateKeyError') {
+        setError(`email`, { message: err.errors['email'] });
+      }
+
+      if (err.name === 'ValidationError') {
+        for (let inputName in err.errors) {
+          setError(inputName, { message: err.errors[inputName] });
+        }
+      }
+
+      // TODO 500: Internal Server Error - display with React Toast or similar
       console.log(err);
     }
   };

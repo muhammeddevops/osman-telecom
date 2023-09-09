@@ -2,43 +2,73 @@ import User from '@/db/models/User.js';
 import { NextResponse } from 'next/server';
 
 export async function POST(req) {
-  console.log('/api/auth/register');
+  console.log('Endpoint: /api/auth/register');
   const formData = await req.formData();
   const { email, password, confirmPassword } = Object.fromEntries(formData);
 
-  // ! WHICH FIELDS DO I WANT TO TRIM?
-  console.log({ email, password, confirmPassword });
+  console.log('FormData:', { email, password, confirmPassword });
 
   try {
-    // TODO Validate
-    //? passwords match
+    // passwords match
     if (password !== confirmPassword) {
-      const error = new Error();
-      error.message = "Passwords don't match";
+      const error = new Error("Passwords don't match");
       throw error;
     }
 
-    // TODO Sanitize
-
-    // TODO Check if user with email already exists
-    // TODO Mongoose - create/register user
+    // Register new user
     const newUser = await User.create({ email, password, role: 'basic' });
-    // const newUser = new User({ email, password, role: 'basic' });
-    // await newUser.save();
-    console.log('USER CREATED');
+    console.log('User created succesfully');
 
     // TODO NextAuth - handle login & sessions
 
     return NextResponse.json({ newUser });
   } catch (err) {
-    // Error Handling
-    // TODO 400 - Mongoose & NextAuth
-    // Mongoose Validation Error
-    // Duplicate Error
+    // TODO 400 - NextAuth - handle in Credential Provider?
 
-    // TODO 500
+    // ✅ TODO 400 - Mongoose
+    //  Handle E11000 duplicate key error - email already in use
+    //  Handle ValidationError
 
-    console.log(err);
-    return NextResponse.json({ err }, { status: 400 });
+    // ✅ TODO 500
+
+    console.log('Error on Registration:', err);
+    const errors = {};
+
+    // Passwords don't match
+    if (err.message === "Passwords don't match") {
+      errors.confirmPassword = err.message;
+      return NextResponse.json(
+        { name: 'PasswordConfirmationFailed', errors },
+        { status: 400 }
+      );
+    }
+
+    // Duplicate email error (email already in use)
+    if (err.name === 'MongoServerError' && err.code === 11000) {
+      errors.email = 'Email already in use';
+      return NextResponse.json(
+        { name: 'DuplicateKeyError', errors },
+        { status: 400 }
+      );
+    }
+
+    // ValidationError (user input failed mongoose schema validation)
+    if (err.name === 'ValidationError') {
+      for (let inputName in err.errors) {
+        errors[inputName] = err.errors[inputName].message;
+        // errors[inputName] = { message: err.errors[inputName].message };
+      }
+
+      return NextResponse.json(
+        { name: 'ValidationError', errors },
+        { status: 400 }
+      );
+    }
+
+    // Internal Server Error
+    return NextResponse.json(
+      { message: 'Something went wrong, please try again later' },
+      { status: 500 }
+    );
   }
 }
