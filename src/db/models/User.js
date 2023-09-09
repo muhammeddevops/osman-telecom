@@ -1,7 +1,14 @@
 import mongoose, { Schema } from 'mongoose';
 import { validate as validateEmail } from 'email-validator';
+import bcrypt from 'bcrypt';
 
-// https://mongoosejs.com/docs/api/schematype.html#SchemaType.prototype.validate()
+/**
+ * Custom password validator function.
+ * @param { String } pw - The password to validate
+ 
+ * https://mongoosejs.com/docs/api/schematype.html#SchemaType.prototype.validate()
+ */
+//
 function validatePassword(pw) {
   console.log('VALIDATE PASSWORD');
   // Contains correct chars, one of each: uppercase, lowercase, number, special
@@ -36,8 +43,6 @@ const userSchema = new Schema(
   {
     email: {
       type: String,
-      //! Unique does not prevent duplicates
-      // https://mongoosejs.com/docs/faq.html#unique-doesnt-work
       unique: true,
       lowercase: true, //? may not be needed
       required: [true, 'Email is required'],
@@ -74,9 +79,24 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
-userSchema.pre('save', function () {
-  // Hash password
-  console.log('PRE-SAVE MIDDLEWARE');
+userSchema.pre('save', async function (next) {
+  console.log('Pre-save Middleware');
+
+  const user = this;
+
+  try {
+    // Hash password if it has been modified
+    if (user.isModified('password')) {
+      const saltRounds = 10;
+      user.password = await bcrypt.hash(user.password, saltRounds);
+      console.log('Password successfully hashed');
+    }
+
+    return next();
+  } catch (err) {
+    console.log('Pre-save Error:', err);
+    next(err);
+  }
 });
 
 // https://stackoverflow.com/questions/62440264/mongoose-nextjs-model-is-not-defined-cannot-overwrite-model-once-compiled
