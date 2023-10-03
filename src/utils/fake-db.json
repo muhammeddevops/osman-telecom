@@ -9,7 +9,7 @@
       "createdAt": "Test123!"
     },
     {
-      "id": 1,
+      "id": 2,
       "role": "basic",
       "name": "basic",
       "email": "basic@email.com",
@@ -59,6 +59,26 @@
       "category": "category",
       "price": 2.0,
       "image": "/assets/apple.png"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "role": "superuser",
+      "name": "Bilaal Ahmed",
+      "email": "superuser@email.com"
+    },
+    {
+      "id": 2,
+      "role": "basic",
+      "name": "Muhammed Khan",
+      "email": "basic@email.com"
+    },
+    {
+      "id": 3,
+      "role": "basic",
+      "name": "Aadil Khan",
+      "email": "basic@email.com"
     }
   ]
 }

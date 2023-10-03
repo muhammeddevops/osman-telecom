@@ -1,7 +1,15 @@
-import db from './fake-db.json';
+import db from "./fake-db.json";
 
 export function getAllProducts() {
   return db.products;
+}
+
+export function getAllCustomers() {
+  return db.customers;
+}
+
+export function getAllUsers() {
+  return db.users;
 }
 
 export function getProductById(id) {
@@ -12,10 +20,10 @@ export function getAdmin(email, password) {
   return (
     db.users.find(
       (user) =>
-        user.role === 'superuser' &&
+        user.role === "superuser" &&
         user.email === email &&
         user.password === password
-    ) || 'Incorrect credentials'
+    ) || "Incorrect credentials"
   );
 }
 
@@ -23,7 +31,7 @@ export function getUser(email, password) {
   return (
     db.users.find(
       (user) => user.email === email && user.password === password
-    ) || 'Incorrect credentials'
+    ) || "Incorrect credentials"
   );
 }
 

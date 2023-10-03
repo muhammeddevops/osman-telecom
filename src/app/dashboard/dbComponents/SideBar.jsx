@@ -1,6 +1,7 @@
 "use client";
 
 import { Sidebar } from "flowbite-react";
+import Link from "next/link";
 
 export default function SideBar() {
   return (
@@ -26,22 +27,26 @@ export default function SideBar() {
           </Sidebar.Item>
           <Sidebar.Item
             href="#"
+            // icon={HiViewBoards}
+            // label="Pro"
+            labelColor="dark"
+          >
+            <Link href="/dashboard/products">
+              <p>Add a product</p>
+            </Link>
+          </Sidebar.Item>
+          <Sidebar.Item
+            href="/dashboard/customers"
             //icon={HiInbox}
             // label="3"
           >
-            <p>Inbox</p>
+            <p>Customers</p>
           </Sidebar.Item>
           <Sidebar.Item
-            href="#"
+            href="/dashboard/users"
             //icon={HiUser}
           >
             <p>Users</p>
-          </Sidebar.Item>
-          <Sidebar.Item
-            href="#"
-            //icon={HiShoppingBag}
-          >
-            <p>Products</p>
           </Sidebar.Item>
           <Sidebar.Item
             href="#"

@@ -1,6 +1,5 @@
 import dbConnect from "@/db/config";
 import { Inter } from "next/font/google";
-import Navbar from "./dbComponents/Navbar";
 import NavBar from "./dbComponents/Navbar";
 import SideBar from "./dbComponents/SideBar";
 
