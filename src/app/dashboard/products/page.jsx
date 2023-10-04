@@ -3,13 +3,9 @@
 import { useEffect, useState } from "react";
 import { Card } from "flowbite-react";
 import { getAllProducts } from "@/utils/query-fake-db";
-import Image from "next/image";
-import Link from "next/link";
 import Dialog from "../dbComponents/Dialog";
 
 const Products = () => {
-  const [active, setActive] = useState("");
-  const [toggle, setToggle] = useState(false);
   const [products, setProducts] = useState([]);
 
   async function onClose() {

@@ -26,12 +26,11 @@ export default function SideBar() {
             <p>Kanban</p>
           </Sidebar.Item>
           <Sidebar.Item
-            href="#"
             // icon={HiViewBoards}
             // label="Pro"
             labelColor="dark"
           >
-            <Link href="/dashboard/products">
+            <Link href="/dashboard/products?open=true">
               <p>Add a product</p>
             </Link>
           </Sidebar.Item>
