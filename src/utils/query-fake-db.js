@@ -8,6 +8,10 @@ export function getAllCustomers() {
   return db.customers;
 }
 
+export function getCustomerById(id) {
+  return db.customers.find((customer) => customer.id === id);
+}
+
 export function getAllUsers() {
   return db.users;
 }

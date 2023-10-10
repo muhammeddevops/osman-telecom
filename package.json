@@ -9,12 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/next-js": "^2.1.5",
+    "@chakra-ui/react": "^2.8.1",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "autoprefixer": "10.4.15",
     "email-validator": "^2.0.4",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.19",
     "flowbite": "^1.8.1",
-    "flowbite-react": "^0.5.0",
+    "flowbite-react": "^0.6.4",
+    "framer-motion": "^10.16.4",
     "mongodb": "^6.0.0",
     "mongoose": "^7.5.0",
     "next": "13.4.19",

@@ -1,12 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Card } from "flowbite-react";
 import { getAllCustomers } from "@/utils/query-fake-db";
+import CustomersTable from "../dbComponents/CustomersTable";
 
 const Customers = () => {
-  const [active, setActive] = useState("");
-  const [toggle, setToggle] = useState(false);
   const [customers, setCustomers] = useState([]);
 
   useEffect(() => {
@@ -16,23 +14,12 @@ const Customers = () => {
   console.log(customers, "customers");
 
   return (
-    <div>
-      <h1>CUstomers PAGE</h1>
-      <div className="grid grid-cols-3">
-        {customers.map((customer) => {
-          return (
-            <Card
-              key={customer.id}
-              className="w-[100px]"
-              imgAlt="customer image"
-              imgSrc={customer.image}
-            >
-              <p className="font-normal text-gray-700 dark:text-gray-400">
-                {customer.name}
-              </p>
-            </Card>
-          );
-        })}
+    <div className="px-9 py-12 bg-gray-100">
+      <div className="bg-white p-2 rounded-lg">
+        <h1 className="ml-10 my-6 font-extrabold font-sans text-2xl">
+          CUSTOMERS
+        </h1>
+        <CustomersTable />
       </div>
     </div>
   );

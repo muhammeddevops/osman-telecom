@@ -5,39 +5,12 @@ import SideBar from "./dbComponents/SideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const layoutStyle = {
-  display: "flex",
-  flexDirection: "column",
-  height: "100vh",
-};
-
-const navbarStyle = {
-  // height: "10%",
-  width: "100%",
-  backgroundColor: "red",
-  color: "red",
-  position: "fixed",
-  left: "0",
-};
-
-const contentContainerStyle = {
-  display: "flex",
-  height: "100%",
-  width: "100%",
-};
-
 const sidebarStyle = {
   marginTop: "3%",
   width: "14%",
   padding: "10px",
   backgroundColor: "white",
   color: "red",
-};
-
-const mainStyle = {
-  flex: "1",
-  backgroundColor: "#E5E7EB",
-  padding: "200px", // Adjust as needed
 };
 
 export const metadata = {
@@ -49,18 +22,20 @@ export default async function RootLayout({ children }) {
   await dbConnect();
 
   return (
-    <html lang="en">
-      <body className={inter.className} style={layoutStyle}>
-        <div style={navbarStyle}>
+    <main>
+      <div className={`${inter.className} flex flex-col h-full`}>
+        <div className="w-full fixed left-0 text-red-600">
           <NavBar />
         </div>
-        <div style={contentContainerStyle}>
+        <div className="flex w-full h-full">
           <div style={sidebarStyle}>
             <SideBar />
           </div>
-          <div style={mainStyle}>{children}</div>
+          <div className="flex-initial w-full  pt-[90px] pl-[50px]">
+            {children}
+          </div>
         </div>
-      </body>
-    </html>
+      </div>
+    </main>
   );
 }

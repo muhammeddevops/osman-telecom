@@ -5,8 +5,6 @@ import { Card } from "flowbite-react";
 import { getAllUsers } from "@/utils/query-fake-db";
 
 const Users = () => {
-  const [active, setActive] = useState("");
-  const [toggle, setToggle] = useState(false);
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -16,9 +14,11 @@ const Users = () => {
   console.log(users, "users");
 
   return (
-    <div>
-      <h1>users PAGE</h1>
-      <div className="grid grid-cols-3">
+    <div className="flex flex-col justify-start items-start mr-[400px]">
+      <h1 className="mb-8 font-black text-center text-3xl text-red-600">
+        USERS
+      </h1>
+      <div className="flex flex-col">
         {users.map((user) => {
           return (
             <Card

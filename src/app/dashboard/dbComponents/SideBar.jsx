@@ -17,14 +17,7 @@ export default function SideBar() {
           >
             <p>Products</p>
           </Sidebar.Item>
-          <Sidebar.Item
-            href="#"
-            // icon={HiViewBoards}
-            // label="Pro"
-            labelColor="dark"
-          >
-            <p>Kanban</p>
-          </Sidebar.Item>
+
           <Sidebar.Item
             // icon={HiViewBoards}
             // label="Pro"

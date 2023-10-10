@@ -20,65 +20,492 @@
   "products": [
     {
       "id": 1,
-      "name": "Product 1",
-      "description": "Product 1 description",
-      "category": "category",
-      "price": 1.0,
+      "name": "Clarence Court Burford Brown Large Free Range Eggs 6 Pack",
+      "description": "Half a dozen free range eggs",
+      "category": "Food item",
+      "price": 2.98,
       "quantity": 35,
-      "image": "/assets/eggs.jpeg"
+      "image": "/assets/eggs.avif"
     },
     {
       "id": 2,
-      "name": "Product 2",
-      "description": "Product 2 description",
-      "category": "category",
-      "price": 2.0,
+      "name": "Red Grapefruit Each",
+      "description": "Grapefruits, sold per item",
+      "category": "Food item",
+      "price": 0.5,
       "quantity": 50,
       "image": "/assets/grapefruit.jpeg"
     },
     {
       "id": 3,
-      "name": "Product 3",
-      "description": "Product 3 description",
-      "category": "category",
+      "name": "Ripen At Home Peach Minimum 8 Pack",
+      "description": "Peaches to ripen at home. Each pack will have at least 8 peaches",
+      "category": "Food item",
       "price": 3.0,
-      "image": "/assets/peach.jpeg"
+      "quantity": 85,
+      "image": "/assets/peach.avif"
     },
     {
       "id": 4,
-      "name": "Product 4",
-      "description": "Product 4 description",
-      "category": "category",
-      "price": 4.0,
+      "name": "Watermelon",
+      "description": "Watermelon",
+      "category": "Food item",
+      "price": 7.0,
+      "quantity": 73,
       "image": "/assets/watermelon.jpeg"
     },
     {
       "id": 5,
-      "name": "Product 5",
-      "description": "Product 5 description",
-      "category": "category",
-      "price": 2.0,
+      "name": "Large Pink Lady Apples Class 1 Loose",
+      "description": "Loose apples",
+      "category": "Food item",
+      "price": 0.45,
+      "quantity": 28,
       "image": "/assets/apple.png"
     }
   ],
   "customers": [
     {
       "id": 1,
-      "role": "superuser",
+      "role": "wholesale",
       "name": "Bilaal Ahmed",
-      "email": "superuser@email.com"
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 4,
+        "regularOrders": 0
+      },
+      "amountSpent": 1200,
+      "pointsEarned": 240,
+      "discountAvailable": 120,
+      "credit": 370,
+      "creditLimit": 500,
+      "debit": 0,
+      "address": {
+        "firstLine": "5 Hamilton Road",
+        "secondLine": "Longsight",
+        "city": "Manchester",
+        "postCode": "M19 2JZ"
+      },
+      "status": "active"
     },
     {
       "id": 2,
-      "role": "basic",
-      "name": "Muhammed Khan",
-      "email": "basic@email.com"
+      "role": "regular",
+      "name": "Jack Jones",
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 0,
+        "regularOrders": 10
+      },
+      "amountSpent": 120,
+      "pointsEarned": 24,
+      "discountAvailable": 12,
+      "credit": 0,
+      "creditLimit": 0,
+      "debit": 0,
+      "address": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "status": "active"
     },
     {
       "id": 3,
-      "role": "basic",
-      "name": "Aadil Khan",
-      "email": "basic@email.com"
+      "role": "wholesale",
+      "name": "Aadil Ihsaan",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 8,
+        "regularOrders": 0
+      },
+      "amountSpent": 2400,
+      "pointsEarned": 480,
+      "discountAvailable": 240,
+      "credit": 400,
+      "creditLimit": 1000,
+      "debit": 0,
+      "address": {
+        "firstLine": "10 Dukes Avenue",
+        "secondLine": "Sparkhill",
+        "city": "Birmingham",
+        "postCode": "B19 9RE"
+      },
+      "status": "active"
+    },
+    {
+      "id": 1,
+      "role": "wholesale",
+      "name": "Bilaal Ahmed",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 4,
+        "regularOrders": 0
+      },
+      "amountSpent": 1200,
+      "pointsEarned": 240,
+      "discountAvailable": 120,
+      "credit": 200,
+      "creditLimit": 500,
+      "debit": 0,
+      "address": {
+        "firstLine": "5 Hamilton Road",
+        "secondLine": "Longsight",
+        "city": "Manchester",
+        "postCode": "M19 2JZ"
+      },
+      "status": "active"
+    },
+    {
+      "id": 1,
+      "role": "wholesale",
+      "name": "Bilaal Ahmed",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 4,
+        "regularOrders": 0
+      },
+      "amountSpent": 1200,
+      "pointsEarned": 240,
+      "discountAvailable": 120,
+      "credit": 200,
+      "creditLimit": 500,
+      "debit": 0,
+      "address": {
+        "firstLine": "5 Hamilton Road",
+        "secondLine": "Longsight",
+        "city": "Manchester",
+        "postCode": "M19 2JZ"
+      },
+      "status": "active"
+    },
+    {
+      "id": 1,
+      "role": "wholesale",
+      "name": "Bilaal Ahmed",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 4,
+        "regularOrders": 0
+      },
+      "amountSpent": 1200,
+      "pointsEarned": 240,
+      "discountAvailable": 120,
+      "credit": 200,
+      "creditLimit": 500,
+      "debit": 0,
+      "address": {
+        "firstLine": "5 Hamilton Road",
+        "secondLine": "Longsight",
+        "city": "Manchester",
+        "postCode": "M19 2JZ"
+      },
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "role": "regular",
+      "name": "Jack Jones",
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 0,
+        "regularOrders": 10
+      },
+      "amountSpent": 120,
+      "pointsEarned": 24,
+      "discountAvailable": 12,
+      "credit": 0,
+      "creditLimit": 0,
+      "debit": 0,
+      "address": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "role": "wholesale",
+      "name": "Aadil Ihsaan",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 8,
+        "regularOrders": 0
+      },
+      "amountSpent": 2400,
+      "pointsEarned": 480,
+      "discountAvailable": 240,
+      "credit": 400,
+      "creditLimit": 1000,
+      "debit": 0,
+      "address": {
+        "firstLine": "10 Dukes Avenue",
+        "secondLine": "Sparkhill",
+        "city": "Birmingham",
+        "postCode": "B19 9RE"
+      },
+      "status": "active"
+    },
+    {
+      "id": 1,
+      "role": "wholesale",
+      "name": "Bilaal Ahmed",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 4,
+        "regularOrders": 0
+      },
+      "amountSpent": 1200,
+      "pointsEarned": 240,
+      "discountAvailable": 120,
+      "credit": 200,
+      "creditLimit": 500,
+      "debit": 0,
+      "address": {
+        "firstLine": "5 Hamilton Road",
+        "secondLine": "Longsight",
+        "city": "Manchester",
+        "postCode": "M19 2JZ"
+      },
+      "status": "active"
+    },
+    {
+      "id": 1,
+      "role": "wholesale",
+      "name": "Bilaal Ahmed",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 4,
+        "regularOrders": 0
+      },
+      "amountSpent": 1200,
+      "pointsEarned": 240,
+      "discountAvailable": 120,
+      "credit": 200,
+      "creditLimit": 500,
+      "debit": 0,
+      "address": {
+        "firstLine": "5 Hamilton Road",
+        "secondLine": "Longsight",
+        "city": "Manchester",
+        "postCode": "M19 2JZ"
+      },
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "role": "regular",
+      "name": "Jack Jones",
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 0,
+        "regularOrders": 10
+      },
+      "amountSpent": 120,
+      "pointsEarned": 24,
+      "discountAvailable": 12,
+      "credit": 0,
+      "creditLimit": 0,
+      "debit": 0,
+      "address": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "role": "wholesale",
+      "name": "Aadil Ihsaan",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 8,
+        "regularOrders": 0
+      },
+      "amountSpent": 2400,
+      "pointsEarned": 480,
+      "discountAvailable": 240,
+      "credit": 400,
+      "creditLimit": 1000,
+      "debit": 0,
+      "address": {
+        "firstLine": "10 Dukes Avenue",
+        "secondLine": "Sparkhill",
+        "city": "Birmingham",
+        "postCode": "B19 9RE"
+      },
+      "status": "active"
+    },
+    {
+      "id": 1,
+      "role": "wholesale",
+      "name": "Bilaal Ahmed",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 4,
+        "regularOrders": 0
+      },
+      "amountSpent": 1200,
+      "pointsEarned": 240,
+      "discountAvailable": 120,
+      "credit": 200,
+      "creditLimit": 500,
+      "debit": 0,
+      "address": {
+        "firstLine": "5 Hamilton Road",
+        "secondLine": "Longsight",
+        "city": "Manchester",
+        "postCode": "M19 2JZ"
+      },
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "role": "regular",
+      "name": "Jack Jones",
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 0,
+        "regularOrders": 10
+      },
+      "amountSpent": 120,
+      "pointsEarned": 24,
+      "discountAvailable": 12,
+      "credit": 0,
+      "creditLimit": 0,
+      "debit": 0,
+      "address": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "role": "wholesale",
+      "name": "Aadil Ihsaan",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 8,
+        "regularOrders": 0
+      },
+      "amountSpent": 2400,
+      "pointsEarned": 480,
+      "discountAvailable": 240,
+      "credit": 400,
+      "creditLimit": 1000,
+      "debit": 0,
+      "address": {
+        "firstLine": "10 Dukes Avenue",
+        "secondLine": "Sparkhill",
+        "city": "Birmingham",
+        "postCode": "B19 9RE"
+      },
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "role": "regular",
+      "name": "Jack Jones",
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 0,
+        "regularOrders": 10
+      },
+      "amountSpent": 120,
+      "pointsEarned": 24,
+      "discountAvailable": 12,
+      "credit": 0,
+      "creditLimit": 0,
+      "debit": 0,
+      "address": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "role": "wholesale",
+      "name": "Aadil Ihsaan",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 8,
+        "regularOrders": 0
+      },
+      "amountSpent": 2400,
+      "pointsEarned": 480,
+      "discountAvailable": 240,
+      "credit": 400,
+      "creditLimit": 1000,
+      "debit": 0,
+      "address": {
+        "firstLine": "10 Dukes Avenue",
+        "secondLine": "Sparkhill",
+        "city": "Birmingham",
+        "postCode": "B19 9RE"
+      },
+      "status": "active"
     }
   ]
 }
