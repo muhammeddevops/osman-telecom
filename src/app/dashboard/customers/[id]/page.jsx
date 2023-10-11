@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import TruckIcon from "../../dbComponents/TruckIcon";
+import { Link } from "@chakra-ui/react";
 
 export default function IndvidualCustomer() {
   const searchParams = useSearchParams();
@@ -64,9 +65,11 @@ export default function IndvidualCustomer() {
           <p className="font-semibo">&bull;</p>
         </div>
 
-        <span className="flex justify-evenly w-1/2">
-          <h3 className="">{customer.contactDetails.phone}</h3>
-          <h3>{customer.contactDetails.email}</h3>
+        <span className="flex justify-center w-1/2">
+          <Link href={`mailto:${customer.contactDetails.email}`} isExternal>
+            <h3 className="text-lg">{customer.contactDetails.email}</h3>
+          </Link>
+          <h3 className="ml-8 text-lg">{customer.contactDetails.phone}</h3>
         </span>
         <div className="px-9 pt-12 bg-gray-100 mt-6 rounded-t-xl grid grid-cols-4 gap-20 w-1/2">
           <p className="text-center text-lg font-medium text-gray-500">
