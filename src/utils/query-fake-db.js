@@ -25,7 +25,7 @@ export function getAllOrders() {
 }
 
 export function getOrderById(id) {
-  return db.orders.find((order) => order.id === id);
+  return db.orders.find((order) => order.orderId === id);
 }
 
 export function getProductById(id) {

@@ -98,81 +98,17 @@
           "quantity": 1,
           "productId": 1
         }
-      ]
-    },
-    {
-      "orderId": 2,
-      "status": "pending",
-      "noOfItems": 7,
-      "customerName": "Mark Smith",
-      "registeredAcc": false,
-
-      "items": [
-        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
-        { "name": "Watermelon", "quantity": 1, "productId": 4 },
-        {
-          "name": "Brown Large Free Range Eggs 6 Pack",
-          "quantity": 1,
-          "productId": 1
-        }
-      ]
-    },
-    {
-      "orderId": 2,
-      "status": "pending",
-      "noOfItems": 7,
-      "customerName": "Mark Smith",
-      "registeredAcc": false,
-      "goodsAmount": 15,
-      "deliveryAmount": 5,
-      "totalAmount": 20,
-      "items": [
-        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
-        { "name": "Watermelon", "quantity": 1, "productId": 4 },
-        {
-          "name": "Brown Large Free Range Eggs 6 Pack",
-          "quantity": 1,
-          "productId": 1
-        }
-      ]
-    },
-    {
-      "orderId": 2,
-      "status": "pending",
-      "noOfItems": 7,
-      "customerName": "Mark Smith",
-      "registeredAcc": false,
-      "goodsAmount": 15,
-      "deliveryAmount": 5,
-      "totalAmount": 20,
-      "items": [
-        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
-        { "name": "Watermelon", "quantity": 1, "productId": 4 },
-        {
-          "name": "Brown Large Free Range Eggs 6 Pack",
-          "quantity": 1,
-          "productId": 1
-        }
-      ]
-    },
-    {
-      "orderId": 2,
-      "status": "pending",
-      "noOfItems": 7,
-      "customerName": "Mark Smith",
-      "registeredAcc": false,
-      "goodsAmount": 15,
-      "deliveryAmount": 5,
-      "totalAmount": 20,
-      "items": [
-        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
-        { "name": "Watermelon", "quantity": 1, "productId": 4 },
-        {
-          "name": "Brown Large Free Range Eggs 6 Pack",
-          "quantity": 1,
-          "productId": 1
-        }
-      ]
+      ],
+      "deliveryAddress": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      }
     },
     {
       "orderId": 2,
@@ -197,6 +133,10 @@
         "secondLine": "Burnage",
         "city": "Manchester",
         "postCode": "M17 3QR"
+      },
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
       }
     },
     {
@@ -216,7 +156,17 @@
           "quantity": 1,
           "productId": 1
         }
-      ]
+      ],
+      "deliveryAddress": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      }
     },
     {
       "orderId": 2,
@@ -235,9 +185,136 @@
           "quantity": 1,
           "productId": 1
         }
-      ]
+      ],
+      "deliveryAddress": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      }
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ],
+      "deliveryAddress": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      }
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ],
+      "deliveryAddress": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      }
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ],
+      "deliveryAddress": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      }
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ],
+      "deliveryAddress": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      }
     }
   ],
+
   "customers": [
     {
       "id": 1,
