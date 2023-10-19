@@ -1,8 +1,13 @@
-import dbConnect from "@/db/config";
 import "./globals.css";
+import dbConnect from "@/db/config";
 import { Inter } from "next/font/google";
-import { ChakraProvider } from "@chakra-ui/react";
+// import { ChakraProvider } from "@chakra-ui/react";
 import { Providers } from "./providers";
+
+// core styles are required for all packages
+import "@mantine/core/styles.css";
+
+import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,9 +21,14 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <Providers>
-        <body className={inter.className}>{children}</body>
-      </Providers>
+      <head>
+        <ColorSchemeScript />
+      </head>
+
+      <body className={inter.className}>
+        {" "}
+        <MantineProvider>{children}</MantineProvider>
+      </body>
     </html>
   );
 }

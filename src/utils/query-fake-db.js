@@ -8,12 +8,24 @@ export function getAllCustomers() {
   return db.customers;
 }
 
+export function getAllEmployees() {
+  return db.employees;
+}
+
 export function getCustomerById(id) {
   return db.customers.find((customer) => customer.id === id);
 }
 
 export function getAllUsers() {
   return db.users;
+}
+
+export function getAllOrders() {
+  return db.orders;
+}
+
+export function getOrderById(id) {
+  return db.orders.find((order) => order.id === id);
 }
 
 export function getProductById(id) {

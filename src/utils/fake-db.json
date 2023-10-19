@@ -3,7 +3,7 @@
     {
       "id": 1,
       "role": "superuser",
-      "name": "superuser",
+      "name": "Abdullah Osman",
       "email": "superuser@email.com",
       "password": "Test123!",
       "createdAt": "Test123!"
@@ -11,7 +11,23 @@
     {
       "id": 2,
       "role": "basic",
-      "name": "basic",
+      "name": "Mahmoud Osman",
+      "email": "basic@email.com",
+      "password": "Test456!",
+      "createdAt": "Test456!"
+    },
+    {
+      "id": 3,
+      "role": "superuser",
+      "name": "Abdullah Osman",
+      "email": "superuser@email.com",
+      "password": "Test123!",
+      "createdAt": "Test123!"
+    },
+    {
+      "id": 4,
+      "role": "basic",
+      "name": "Mahmoud Osman",
       "email": "basic@email.com",
       "password": "Test456!",
       "createdAt": "Test456!"
@@ -20,7 +36,7 @@
   "products": [
     {
       "id": 1,
-      "name": "Clarence Court Burford Brown Large Free Range Eggs 6 Pack",
+      "name": "Brown Large Free Range Eggs 6 Pack",
       "description": "Half a dozen free range eggs",
       "category": "Food item",
       "price": 2.98,
@@ -62,6 +78,164 @@
       "price": 0.45,
       "quantity": 28,
       "image": "/assets/apple.png"
+    }
+  ],
+  "orders": [
+    {
+      "orderId": 1,
+      "status": "delivered",
+      "noOfItems": 7,
+      "customerName": "Bilaal Ahmed",
+      "registeredAcc": true,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ]
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ]
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ]
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ]
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ]
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ],
+      "deliveryAddress": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      }
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ]
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ]
     }
   ],
   "customers": [
@@ -144,7 +318,7 @@
       "status": "active"
     },
     {
-      "id": 1,
+      "id": 4,
       "role": "wholesale",
       "name": "Bilaal Ahmed",
       "contactDetails": {
@@ -170,7 +344,7 @@
       "status": "active"
     },
     {
-      "id": 1,
+      "id": 5,
       "role": "wholesale",
       "name": "Bilaal Ahmed",
       "contactDetails": {
@@ -196,7 +370,7 @@
       "status": "active"
     },
     {
-      "id": 1,
+      "id": 6,
       "role": "wholesale",
       "name": "Bilaal Ahmed",
       "contactDetails": {
@@ -222,7 +396,7 @@
       "status": "active"
     },
     {
-      "id": 2,
+      "id": 7,
       "role": "regular",
       "name": "Jack Jones",
       "contactDetails": {
@@ -248,7 +422,7 @@
       "status": "active"
     },
     {
-      "id": 3,
+      "id": 8,
       "role": "wholesale",
       "name": "Aadil Ihsaan",
       "contactDetails": {
@@ -274,7 +448,7 @@
       "status": "active"
     },
     {
-      "id": 1,
+      "id": 9,
       "role": "wholesale",
       "name": "Bilaal Ahmed",
       "contactDetails": {
@@ -300,7 +474,7 @@
       "status": "active"
     },
     {
-      "id": 1,
+      "id": 10,
       "role": "wholesale",
       "name": "Bilaal Ahmed",
       "contactDetails": {
@@ -326,7 +500,7 @@
       "status": "active"
     },
     {
-      "id": 2,
+      "id": 11,
       "role": "regular",
       "name": "Jack Jones",
       "contactDetails": {
@@ -352,7 +526,7 @@
       "status": "active"
     },
     {
-      "id": 3,
+      "id": 12,
       "role": "wholesale",
       "name": "Aadil Ihsaan",
       "contactDetails": {
@@ -378,7 +552,7 @@
       "status": "active"
     },
     {
-      "id": 1,
+      "id": 13,
       "role": "wholesale",
       "name": "Bilaal Ahmed",
       "contactDetails": {
@@ -404,7 +578,7 @@
       "status": "active"
     },
     {
-      "id": 2,
+      "id": 14,
       "role": "regular",
       "name": "Jack Jones",
       "contactDetails": {
@@ -430,7 +604,7 @@
       "status": "active"
     },
     {
-      "id": 3,
+      "id": 15,
       "role": "wholesale",
       "name": "Aadil Ihsaan",
       "contactDetails": {
@@ -456,7 +630,7 @@
       "status": "active"
     },
     {
-      "id": 2,
+      "id": 16,
       "role": "regular",
       "name": "Jack Jones",
       "contactDetails": {
@@ -482,7 +656,7 @@
       "status": "active"
     },
     {
-      "id": 3,
+      "id": 17,
       "role": "wholesale",
       "name": "Aadil Ihsaan",
       "contactDetails": {
@@ -506,6 +680,40 @@
         "postCode": "B19 9RE"
       },
       "status": "active"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "position": "cashier",
+      "name": "Abdullah Osman",
+      "email": "superuser@email.com",
+      "password": "Test123!",
+      "createdAt": "Test123!"
+    },
+    {
+      "id": 2,
+      "position": "delivery driver",
+      "name": "Mahmoud Osman",
+      "email": "basic@email.com",
+      "password": "Test456!",
+      "createdAt": "Test456!"
+    },
+    {
+      "id": 3,
+      "position": "cleaner",
+      "name": "Abdullah Osman",
+      "email": "superuser@email.com",
+      "password": "Test123!",
+      "createdAt": "Test123!"
+    },
+    {
+      "id": 4,
+      "position": "manager",
+      "name": "Mahmoud Osman",
+      "email": "basic@email.com",
+      "password": "Test456!",
+      "createdAt": "Test456!"
     }
   ]
 }
