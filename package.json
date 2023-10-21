@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@mantine/core": "^7.1.5",
+    "@mantine/ds": "^7.1.5",
     "@mantine/hooks": "^7.1.5",
+    "@tabler/icons-react": "^2.39.0",
     "autoprefixer": "10.4.15",
     "email-validator": "^2.0.4",
     "eslint": "8.47.0",
