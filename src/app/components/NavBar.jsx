@@ -61,7 +61,7 @@ export function NavBar() {
 
   return (
     <header
-      className="h-22 mb-28 bg-white border-b border-solid border-b-gray-400 pb-3"
+      className="h-22 bg-white border-b border-solid border-b-gray-400 pb-3"
       // className={classes.header}
     >
       <Container>

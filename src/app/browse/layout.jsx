@@ -1,5 +1,6 @@
 import dbConnect from "@/db/config";
 import { Inter } from "next/font/google";
+import { SideBar } from "../components/SideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,16 +19,16 @@ export default async function RootLayout({ children }) {
         // className="grid grid-cols-2"
         className={`${inter.className} flex flex-row`}
       >
-        <div className="bg-green-500">
+        <div className="bg-white">
           <SideBar />
         </div>
 
         <div className=" flex flex-col w-full h-full m-0">
           <div
-            className={navbarStyle}
-            // className="w-5/6 absolute top-0 right-0 m-0"
+          // className={navbarStyle}
+          // className="w-5/6 absolute top-0 right-0 m-0"
           >
-            <NavBar />
+            {/* <NavBar /> */}
           </div>
 
           <div className="flex-initial w-full  pt-[90px] pl-[50px]">
