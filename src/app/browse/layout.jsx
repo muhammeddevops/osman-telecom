@@ -1,6 +1,6 @@
 import dbConnect from "@/db/config";
 import { Inter } from "next/font/google";
-import { SideBar } from "../components/SideBar";
+import { CollapsibleSideBar } from "../components/CollapsibleSidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +20,7 @@ export default async function RootLayout({ children }) {
         className={`${inter.className} flex flex-row`}
       >
         <div className="bg-white">
-          <SideBar />
+          <CollapsibleSideBar />
         </div>
 
         <div className=" flex flex-col w-full h-full m-0">

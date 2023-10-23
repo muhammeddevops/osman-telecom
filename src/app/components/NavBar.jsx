@@ -7,6 +7,7 @@ import { MantineLogo } from "@mantine/ds";
 import classes from "./DoubleHeader.module.css";
 import Link from "next/link";
 import { IconSearch } from "@tabler/icons-react";
+import Image from "next/image";
 
 const userLinks = [
   // { link: "#", label: "Privacy & Security" },
@@ -33,7 +34,7 @@ export function NavBar() {
       key={item.label}
       className={`${
         active === index
-          ? "text-black border-b-blue-600"
+          ? "text-black border-b-red-600"
           : "text-gray-600 border-b-transparent"
       } uppercase font-2xs p-[2px] font-bold border-b-solid border-b-2 mr-4 mb-2 mt-1`}
       // className={classes.mainLink}
@@ -76,7 +77,13 @@ export function NavBar() {
       </Container>
       <Container className={classes.inner}>
         {/* <Container className="flex"> */}
-        <MantineLogo size={34} />
+        <Group justify="flex-start">
+          <Image src="/assets/OTFont.png" width={50} height={50} />
+          <h2 className="text-red-600 font-black text-lg">Osman Telecom</h2>
+          {/* <MantineLogo size={28} /> */}
+        </Group>
+
+        {/* <MantineLogo size={34} /> */}
         <Autocomplete
           className={classes.search}
           placeholder="Search"
