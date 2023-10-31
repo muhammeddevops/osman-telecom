@@ -7,9 +7,10 @@ import RegisterForm from '@/components/RegisterForm';
 export default async function RegisterPage() {
   const session = await getServerSession(authOptions);
 
+  // For existing sessions, redirect based on user role
   if (session) {
     if (session.user.role === 'admin') {
-      redirect('/dashboard');
+      redirect('/admin/dashboard');
     } else {
       redirect('/');
     }

@@ -16,7 +16,7 @@ export default function LoginForm({ title }) {
   useEffect(() => {
     if (session) {
       if (session.user.role === 'admin') {
-        router.push('/dashboard');
+        router.push('/admin/dashboard');
       } else {
         router.push('/');
       }
