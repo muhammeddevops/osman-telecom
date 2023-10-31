@@ -1,9 +1,28 @@
 'use client';
 
-import validateForm from '@/utils/validate-form';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { signIn, useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+
+import validateForm from '@/utils/validate-form';
 
 export default function LoginForm({ title }) {
+  const router = useRouter();
+  const { data: session, status } = useSession();
+  console.log({ session, status });
+
+  // Redirect appropriately if session is valid
+  useEffect(() => {
+    if (session) {
+      if (session.user.role === 'admin') {
+        router.push('/dashboard');
+      } else {
+        router.push('/');
+      }
+    }
+  }, [session, router]);
+
   const {
     register,
     handleSubmit,
@@ -13,8 +32,17 @@ export default function LoginForm({ title }) {
   //! TESTING ONLY
   if (Object.keys(errors).length) console.log('errors:', errors);
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      const res = await signIn('credentials', { ...data, redirect: false });
+      console.log('login response', res);
+
+      if (!res.ok && res.error) throw res.error;
+
+      // redirect after successful login is handled by useEffect (above)
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
