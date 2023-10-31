@@ -69,6 +69,8 @@ const userSchema = new Schema(
       type: String,
       lowercase: true,
       required: [true, 'a user must have a valid role'],
+      // New user is 'basic' if alt role is not specified
+      default: 'basic',
       enum: {
         values: ['basic', 'wholesaler', 'admin'],
         message: '{VALUE} is not a valid role',

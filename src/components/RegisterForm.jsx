@@ -2,6 +2,7 @@
 
 import { useForm } from 'react-hook-form';
 import validateForm from '@/utils/validate-form';
+import { signIn } from 'next-auth/react';
 
 /** TODO input validation
  * email -> ensure valid email is entered ✅
@@ -38,24 +39,20 @@ export default function RegisterForm() {
 
       // HTTP Status not in 200-299 range
       if (!res.ok) {
+        // throw error returned by server
         if (res.status >= 400) throw await res.json();
       }
 
-      const resData = await res.json();
+      // User registered successfully
+      const user = await res.json();
+      console.log({ user });
 
-      console.log({ resData });
-
-      /**
-       * Handle successful registration 
-       * TODO Log user in & handle JWT --> Next Auth
-        - this should store user in AuthProvider context
-       * TODO Redirect to appropriate page:
-        - home page
-        - or the page that sent them to registration page
-       */
-
-      // res.status === 201 &&
-      //   router.push('/dashboard/login?success=Account has been created');
+      // Automatically sign-in after successful registration
+      await signIn('credentials', {
+        email: data.email,
+        password: data.password,
+        callbackUrl: '/', // redirect user to home
+      });
     } catch (err) {
       // Handle server-side errors
       if (process.env.NODE_ENV === 'development') {

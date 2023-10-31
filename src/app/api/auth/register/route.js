@@ -16,8 +16,8 @@ export async function POST(req) {
     }
 
     // Register new user
-    const newUser = await User.create({ email, password, role: 'basic' });
-    console.log('User created succesfully');
+    const newUser = await User.create({ email, password });
+    console.log('User created successfully');
 
     // TODO NextAuth - handle login & sessions
 
