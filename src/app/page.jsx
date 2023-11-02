@@ -7,7 +7,7 @@ export default function Home() {
       <p className="text-xl font-extrabold text-red-600 ml-11">
         on page.js 123
       </p>
-      <Button component={Link} href="/dashboard/products">
+      <Button component={Link} href="/admin/dashboard/products">
         Dashboard
       </Button>
     </main>

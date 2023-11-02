@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useForm } from 'react-hook-form';
-import validateForm from '@/utils/validate-form';
+import { useForm } from "react-hook-form";
+import validateForm from "@/utils/validate-form";
 
 /** TODO input validation
  * email -> ensure valid email is entered ✅
@@ -17,15 +17,15 @@ export default function RegisterForm() {
     handleSubmit,
     formState: { errors, isSubmitting, touchedFields },
     trigger,
-  } = useForm({ mode: 'onTouched' });
+  } = useForm({ mode: "onTouched" });
   // mode: "onTouched" - validates initially onBlur, subsequently onChanged
   // Same behaviour as default "onSubmit" but validates without having to submit
 
   //! TESTING ONLY
-  if (Object.keys(errors).length) console.log('errors:', errors);
+  if (Object.keys(errors).length) console.log("errors:", errors);
 
   const onSubmit = async (data) => {
-    console.log('input values:', data);
+    console.log("input values:", data);
 
     /* try {
       const res = await fetch("/api/auth/register", {
@@ -39,7 +39,7 @@ export default function RegisterForm() {
         }),
       });
       res.status === 201 &&
-        router.push("/dashboard/login?success=Account has been created");
+        router.push("/admin/dashboard/login?success=Account has been created");
     } catch (err) {
       //   setError(err);
       //   console.log(err);
@@ -65,8 +65,8 @@ export default function RegisterForm() {
             className="form-input"
             type="text"
             placeholder="Enter your email..."
-            {...register('email', {
-              required: validateForm.required('email'),
+            {...register("email", {
+              required: validateForm.required("email"),
               validate: (value) => validateForm.email(value),
             })}
           />
@@ -88,16 +88,16 @@ export default function RegisterForm() {
             className="form-input"
             type="password"
             placeholder="Enter your password..."
-            {...register('password', {
-              required: validateForm.required('password'),
+            {...register("password", {
+              required: validateForm.required("password"),
               validate: (value) => validateForm.registerPassword(value),
               onBlur: () => {
                 // Manually revalidate confirmPassword when the field has been touched & its error type is not 'required'
                 if (
                   touchedFields.confirmPassword &&
-                  errors.confirmPassword?.type !== 'required'
+                  errors.confirmPassword?.type !== "required"
                 ) {
-                  trigger('confirmPassword');
+                  trigger("confirmPassword");
                 }
               },
             })}
@@ -120,7 +120,7 @@ export default function RegisterForm() {
             className="form-input"
             type="password"
             placeholder="Confirm your password..."
-            {...register('confirmPassword', {
+            {...register("confirmPassword", {
               required: validateForm.required(),
               validate: (_, values) => {
                 return validateForm.confirmPasswordsMatch(
@@ -138,13 +138,13 @@ export default function RegisterForm() {
           )}
         </div>
 
-        <button
+        <Button
           type="submit"
           className="font-bold uppercase bg-red-600 text-white px-8 py-4 rounded-md disabled:bg-slate-700"
           disabled={isSubmitting}
         >
           Register
-        </button>
+        </Button>
       </form>
     </div>
   );
