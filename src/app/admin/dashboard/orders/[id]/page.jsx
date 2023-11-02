@@ -45,7 +45,7 @@ export default function IndvidualOrder() {
 
   return (
     <div className="p-4">
-      <Link href="/dashboard/orders">Back to Orders</Link>
+      <Link href="/admin/dashboard/orders">Back to Orders</Link>
       <h1 className="text-2xl font-semibold mb-4">
         Order Details - Order #{orderId}
       </h1>

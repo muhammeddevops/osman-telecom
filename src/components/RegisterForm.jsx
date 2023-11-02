@@ -39,7 +39,7 @@ export default function RegisterForm() {
         }),
       });
       res.status === 201 &&
-        router.push("/dashboard/login?success=Account has been created");
+        router.push("/admin/dashboard/login?success=Account has been created");
     } catch (err) {
       //   setError(err);
       //   console.log(err);

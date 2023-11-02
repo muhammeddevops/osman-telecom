@@ -7,17 +7,17 @@ import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 
 const linksMockdata = [
-  { label: "Sales and Revenue", link: "dashboard/performance" },
-  { label: "Inventory", link: "dashboard/products" },
-  { label: "Orders", link: "dashboard/orders" },
-  { label: "Employees", link: "dashboard/employees" },
-  { label: "Customers", link: "dashboard/customers" },
-  { label: "Users", link: "dashboard/users" },
+  { label: "Sales and Revenue", link: "admin/dashboard/performance" },
+  { label: "Inventory", link: "admin/dashboard/products" },
+  { label: "Orders", link: "admin/dashboard/orders" },
+  { label: "Employees", link: "admin/dashboard/employees" },
+  { label: "Customers", link: "admin/dashboard/customers" },
+  { label: "Users", link: "admin/dashboard/users" },
 ];
 
 export default function SideBar() {
   const [active, setActive] = useState("Home");
-  const [activeLink, setActiveLink] = useState("/dashboard/products");
+  const [activeLink, setActiveLink] = useState("/admin/dashboard/products");
 
   const router = useRouter();
   const pathname = usePathname();
@@ -40,7 +40,7 @@ export default function SideBar() {
  
       ${classes.link}`}
       data-active={activeLink === link.link || undefined}
-      href={`/dashboard/${link.link}`}
+      href={`/admin/dashboard/${link.link}`}
       onClick={(event) => {
         event.preventDefault();
         setActiveLink(link.label);

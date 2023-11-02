@@ -20,12 +20,12 @@ function Dialog({ title, opened, close, children }) {
     } else {
       dialogRef.current?.close();
 
-      router.push("/dashboard/products");
+      router.push("/admin/dashboard/products");
     }
   }, [showDialog, openStatus]);
 
   const closeDialog = () => {
-    router.push("/dashboard/products");
+    router.push("/admin/dashboard/products");
     onClose();
   };
 

@@ -53,7 +53,7 @@ export default function CustomersTable() {
               <Table.Td className="text-center">
                 {" "}
                 <Link
-                  href={`/dashboard/customers/${customer.id}?customer=${customer.id}`}
+                  href={`/admin/dashboard/customers/${customer.id}?customer=${customer.id}`}
                 >
                   {customer.name}
                 </Link>

@@ -11,7 +11,7 @@ import {
   Filter,
   Group,
 } from "@syncfusion/ej2-react-grids";
-import { data } from "../../datasource";
+import { data } from "../../../datasource";
 
 export default function Performance() {
   const pageSettings = { pageSize: 6 };

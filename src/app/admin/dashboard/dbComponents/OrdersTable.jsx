@@ -40,7 +40,7 @@ export default function OrdersTable() {
               <Table.Td className="text-center">
                 {" "}
                 <Link
-                  href={`/dashboard/orders/${order.orderId}?order=${order.orderId}`}
+                  href={`/admin/dashboard/orders/${order.orderId}?order=${order.orderId}`}
                 >
                   {order.customerName}
                 </Link>
