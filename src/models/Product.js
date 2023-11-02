@@ -13,7 +13,7 @@ const productSchema = new Schema(
       required: true,
     },
     category: {
-      type: String,
+      type: [String],
       required: true,
     },
     price: {
@@ -27,19 +27,6 @@ const productSchema = new Schema(
     image: {
       type: String,
       required: false,
-    },
-    tags: {
-      type: [String],
-      required: false,
-    },
-    expiry_date: {
-      type: Date,
-      required: true,
-    },
-    sku: {
-      type: String,
-      unique: true,
-      required: true,
     },
   },
   { timestamps: true }

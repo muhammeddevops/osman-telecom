@@ -37,18 +37,7 @@ function Dialog({ title, opened, close, children }) {
   return (
     <div className="flex">
       <Modal opened={opened} onClose={close} title="Add a product" size={"lg"}>
-        <Modal.Body className="px-5 pb-6">
-          {children}
-          <div className="flex flex-row justify-end mt-2">
-            <Button
-              onClick={clickOk}
-              color="green"
-              className="py-1 px-3 rounded border-none mt-2"
-            >
-              Add Product
-            </Button>
-          </div>
-        </Modal.Body>
+        <Modal.Body className="px-5 pb-6">{children}</Modal.Body>
       </Modal>
     </div>
   );

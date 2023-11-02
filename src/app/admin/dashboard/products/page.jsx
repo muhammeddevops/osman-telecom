@@ -4,13 +4,20 @@ import { useEffect, useState } from "react";
 import { getAllProducts } from "@/utils/query-fake-db";
 import Dialog from "../dbComponents/Dialog";
 import { useDisclosure } from "@mantine/hooks";
-import AddProdForm from "../dbComponents/AddProdForm";
+import AddProductForm from "../dbComponents/AddProductForm";
 import Image from "next/image";
 import { Button } from "@mantine/core";
+import { fetchAllProducts } from "@/api-requests/products";
+import { useQuery } from "@tanstack/react-query";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [opened, { open, close }] = useDisclosure(false);
+
+  const productsFromApi = useQuery({
+    queryKey: ["products"],
+    queryFn: fetchAllProducts(),
+  });
 
   async function onClose() {
     console.log("Modal has closed");
@@ -29,7 +36,7 @@ const Products = () => {
   return (
     <>
       <Dialog title="Add a product" opened={opened} close={close}>
-        <AddProdForm />
+        <AddProductForm />
       </Dialog>
       <div className="flex flex-col justify-center items-center ">
         <h1 className="mb-8 font-black text-center text-3xl text-red-600">
