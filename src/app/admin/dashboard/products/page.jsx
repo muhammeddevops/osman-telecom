@@ -1,37 +1,37 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { getAllProducts } from "@/utils/query-fake-db";
-import Dialog from "../dbComponents/Dialog";
-import { useDisclosure } from "@mantine/hooks";
-import AddProductForm from "../dbComponents/AddProductForm";
-import Image from "next/image";
-import { Button } from "@mantine/core";
-import { fetchAllProducts } from "@/api-requests/products";
-import { useQuery } from "@tanstack/react-query";
+import Dialog from '../dbComponents/Dialog';
+import { useDisclosure } from '@mantine/hooks';
+import AddProductForm from '../dbComponents/AddProductForm';
+import Image from 'next/image';
+import { Button } from '@mantine/core';
+import otApi from '@/api-requests';
+import { useQuery } from '@tanstack/react-query';
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
   const [opened, { open, close }] = useDisclosure(false);
 
-  const productsFromApi = useQuery({
-    queryKey: ["products"],
-    queryFn: fetchAllProducts(),
+  const {
+    data: products,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ['products'],
+    queryFn: otApi.fetchAllProducts,
   });
 
+  console.log('products:', { isLoading, error, products });
+
   async function onClose() {
-    console.log("Modal has closed");
+    console.log('Modal has closed');
   }
 
   async function onOk() {
-    console.log("Ok was clicked");
+    console.log('Ok was clicked');
   }
 
-  useEffect(() => {
-    setProducts(getAllProducts());
-  });
-
-  console.log(products, "products");
+  if (error) return <h1>ERROR: {error}</h1>;
+  if (!products || isLoading) return <h1>Loading...</h1>;
 
   return (
     <>
@@ -55,17 +55,15 @@ const Products = () => {
             {products.map((product) => {
               return (
                 <div
-                  key={product.id}
+                  key={product._id}
                   className="flex  w-[500px] mb-[20px] bg-white rounded-lg"
-                  // imgAlt="product image"
-                  // imgSrc={product.image}
                 >
                   <Image
+                    className="rounded-lg"
                     src={product.image}
-                    alt="product image"
+                    alt={product.description}
                     width={200}
                     height={200}
-                    className="rounded-lg"
                     // blurDataURL="data:..." automatically provided
                     // placeholder="blur" // Optional blur-up while loading
                   />

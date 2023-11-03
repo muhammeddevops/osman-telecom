@@ -1,19 +1,20 @@
-import Product from "@/models/Product";
-import { NextResponse } from "next/server";
+import Product from '@/models/Product';
+import { NextResponse } from 'next/server';
 
+// TODO add product using form ✅
+// TODO add product images - unsplash / manually
+// TODO validate form fields/error handling - should each product have unique name?
 export async function POST(req) {
+  console.log('POST /product');
   try {
-    const prodData = await req.formData();
-    console.log(prodData);
-  } catch (err) {
-    console.log(err);
-  }
-}
+    const productData = await req.json();
 
-export async function GET() {
-  try {
-    return NextResponse.json({ id: 1, name: "Muhammed" });
+    // Create new product
+    const product = await Product.create(productData);
+
+    return NextResponse.json({ product }, { status: 201 });
   } catch (err) {
+    // TODO handle errors that may occur when creating a new product
     console.log(err);
   }
 }
