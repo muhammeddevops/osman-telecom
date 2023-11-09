@@ -1,4 +1,5 @@
 import otApi from './axios-instance';
+import products from '@/utils/db-products-list.json';
 
 // Simulate loading by waiting 2 seconds before returning data
 function wait(data) {
@@ -10,6 +11,7 @@ function wait(data) {
 }
 
 export function fetchAllProducts() {
+  // return new Promise((resolve) => resolve(products));
   return otApi.get('/products').then(({ data }) => data.products);
 }
 

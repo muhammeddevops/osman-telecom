@@ -30,13 +30,19 @@ const Products = () => {
     console.log('Ok was clicked');
   }
 
-  if (error) return <h1>ERROR: {error}</h1>;
-  if (!products || isLoading) return <h1>Loading...</h1>;
+  if (error)
+    return (
+      <>
+        <h1>No products (products is undefined)</h1>
+        <h1>QUERY ERROR: {error.message}</h1>
+      </>
+    );
+  if (!products?.length || isLoading) return <h1>Loading...</h1>;
 
   return (
     <>
       <Dialog title="Add a product" opened={opened} close={close}>
-        <AddProductForm />
+        <AddProductForm closeModal={close} />
       </Dialog>
       <div className="flex flex-col justify-center items-center ">
         <h1 className="mb-8 font-black text-center text-3xl text-red-600">
@@ -72,7 +78,9 @@ const Products = () => {
                     <h2 className=" mt-2 font-medium text-lg">
                       {product.name}
                     </h2>
-                    <p className="mb-[30px] font-light ">{product.category}</p>
+                    <p className="mb-[30px] font-light ">
+                      {product.categories}
+                    </p>
                     <p className="text-2xl font-extrabold">
                       £{product.price.toFixed(2)}
                     </p>
