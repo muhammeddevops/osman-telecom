@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import validateForm from '@/utils/validate-form';
 import { signIn } from 'next-auth/react';
 import { Button } from '@mantine/core';
+import { Notifications, notifications } from '@mantine/notifications';
 
 /** TODO input validation
  * email -> ensure valid email is entered ✅
@@ -54,6 +55,8 @@ export default function RegisterForm() {
         callbackUrl: '/', // redirect user to home
       });
     } catch (err) {
+      console.log('Error on Registration:', err);
+
       // Handle server-side errors
       if (process.env.NODE_ENV === 'development') {
         console.log(`${err.name ?? 'RegistrationError'}:`, err);
@@ -75,13 +78,20 @@ export default function RegisterForm() {
         }
       }
 
-      // TODO 500: Internal Server Error - display with React Toast or similar
-      console.log(err);
+      //  500: Internal Server Error
+      if (err.name === 'InternalServerError') {
+        notifications.show({
+          title: err.message + ' 😕',
+          message: 'Try again later',
+          color: 'red',
+        });
+      }
     }
   };
 
   return (
     <div className="flex flex-col justify-center items-center gap-10 border border-slate-950 px-8 py-10 rounded-md">
+      <Notifications position="top-center" />
       <h1 className="text-center text-4xl">Sign up</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -174,7 +184,8 @@ export default function RegisterForm() {
 
         <Button
           type="submit"
-          className="font-bold uppercase bg-red-600 text-white px-8 py-4 rounded-md disabled:bg-slate-700"
+          className="font-bold uppercase text-white px-8 py-4 rounded-md disabled:bg-slate-700"
+          color="red"
           disabled={isSubmitting}
         >
           Register

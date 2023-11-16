@@ -2,8 +2,10 @@ import dbConnect from '@/db/config';
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Providers from '@/providers';
+
 // core styles are required for all packages
 import '@mantine/core/styles.css';
+import '@mantine/notifications/styles.css';
 
 import { ColorSchemeScript } from '@mantine/core';
 
