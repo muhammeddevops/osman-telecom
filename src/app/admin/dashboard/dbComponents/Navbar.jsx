@@ -1,26 +1,24 @@
-"use client";
+'use client';
 
 // import { Navbar } from "flowbite-react";
-import { useState } from "react";
-import { Container, Group, Burger } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import classes from "./HeaderSimple.module.css";
-import Link from "next/link";
+import { useState } from 'react';
+import { Container, Group, Burger } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import classes from './HeaderSimple.module.css';
+import Link from 'next/link';
 
-const links = [{ link: "/about", label: "Log out" }];
+const links = [{ link: '/about', label: 'Log out' }];
 
 export default function NavBar() {
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
-
-  console.log(active, "active <<<<<");
 
   const items = links.map((link) => (
     <a
       key={link.label}
       href={link.link}
       className={`block leading-none py-2 px-3 rounded-md no-underline  text-sm font-medium ${
-        active === link.link ? "bg-red-600 text-white" : "text-gray-700"
+        active === link.link ? 'bg-red-600 text-white' : 'text-gray-700'
       }`}
       data-active={active === link.link || undefined}
       onClick={(event) => {

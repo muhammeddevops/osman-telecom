@@ -26,9 +26,6 @@ export default function SideBar() {
     setActiveLink(pathname.slice(1));
   }, [pathname]);
 
-  console.log(pathname, '<<<<pathname');
-  console.log(activeLink, '<<<<<activeLink');
-
   const links = linksMockdata.map((link) => (
     <a
       // className={`${

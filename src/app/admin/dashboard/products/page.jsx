@@ -8,6 +8,8 @@ import { Button } from '@mantine/core';
 import otApi from '@/api-requests';
 import { useQuery } from '@tanstack/react-query';
 
+import productPlaceholder from '/public/assets/product-placeholder.jpg';
+
 const Products = () => {
   const [opened, { open, close }] = useDisclosure(false);
 
@@ -66,7 +68,8 @@ const Products = () => {
                 >
                   <Image
                     className="rounded-lg"
-                    src={product.image}
+                    // TODO store product images with Firebase and store URL reference in Products collection
+                    src={productPlaceholder}
                     alt={product.description}
                     width={200}
                     height={200}
