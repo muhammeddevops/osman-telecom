@@ -3,7 +3,7 @@ import { validate as validateEmail } from 'email-validator';
 const validateForm = {
   // Returns the error message to display for a required field
   required(inputName) {
-    if (!inputName) return 'This is a required field';
+    if (!inputName) return 'This field is required';
 
     const formattedInputName =
       inputName[0].toUpperCase() + inputName.slice(1).toLowerCase();
@@ -32,17 +32,7 @@ const validateForm = {
     const hasNumber = /[0-9]/g.test(pw);
     const hasSpecialCharacter = /[^A-Za-z0-9\s]/g.test(pw);
 
-    // Valid password
-    if (
-      hasUppercaseLetter &&
-      hasLowercaseLetter &&
-      hasNumber &&
-      hasSpecialCharacter
-    ) {
-      return true;
-    }
-
-    // Invalid password, return prompt to help user create strong password
+    // Accumulate amendments required to fulfil valid password criteria
     let amendmentsRequired = [];
 
     if (!hasUppercaseLetter) amendmentsRequired.push('an uppercase letter');
@@ -53,6 +43,10 @@ const validateForm = {
         'a special character: ()`~!@#$%^&*-+=|{}[]:;"\'<>,.?/_'
       );
 
+    // Valid password, no amendments required
+    if (amendmentsRequired.length === 0) return true;
+
+    // Invalid password, return prompt to help user create strong password
     return (
       `Missing required character${
         amendmentsRequired.length > 1 ? 's' : ''

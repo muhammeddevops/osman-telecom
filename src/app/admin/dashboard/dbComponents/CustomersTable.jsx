@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { getAllCustomers } from "@/utils/query-fake-db";
-import { Table } from "@mantine/core";
-import Link from "next/link";
+import { getAllCustomers } from '@/utils/query-fake-db';
+import { Table } from '@mantine/core';
+import Link from 'next/link';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function CustomersTable() {
   const [customers, setCustomers] = useState([]);
@@ -16,7 +16,7 @@ export default function CustomersTable() {
     <Table
       variant="simple"
       colorScheme="blackAlpha"
-      size={"lg"}
+      size={'lg'}
       highlightOnHover
     >
       {/* <TableCaption>Osman Telecom Customers</TableCaption> */}
@@ -46,12 +46,12 @@ export default function CustomersTable() {
         </Table.Tr>
       </Table.Thead>
       <Table.Tbody>
-        {customers.map((customer) => {
+        {customers.map((customer, index) => {
           return (
-            <Table.Tr>
-              {" "}
+            <Table.Tr key={index}>
+              {' '}
               <Table.Td className="text-center">
-                {" "}
+                {' '}
                 <Link
                   href={`/admin/dashboard/customers/${customer.id}?customer=${customer.id}`}
                 >

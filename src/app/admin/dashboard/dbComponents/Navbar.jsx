@@ -6,6 +6,7 @@ import { Container, Group, Burger } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './HeaderSimple.module.css';
 import Link from 'next/link';
+import SignOutButton from '@/components/SignOutButton';
 
 const links = [{ link: '/about', label: 'Log out' }];
 
@@ -41,7 +42,8 @@ export default function NavBar() {
           </h1>
         </Link>
         <Group gap={5} visibleFrom="xs">
-          {items}
+          {/* {items} */}
+          <SignOutButton />
         </Group>
         <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
       </Container>
