@@ -1,23 +1,23 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { UnstyledButton, Tooltip, Title, rem } from "@mantine/core";
-import classes from "./DoubleNavbar.module.css";
-import { useEffect, useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import Link from 'next/link';
+import { UnstyledButton, Tooltip, Title, rem } from '@mantine/core';
+import classes from './DoubleNavbar.module.css';
+import { useEffect, useState } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 
 const linksMockdata = [
-  { label: "Sales and Revenue", link: "admin/dashboard/performance" },
-  { label: "Inventory", link: "admin/dashboard/products" },
-  { label: "Orders", link: "admin/dashboard/orders" },
-  { label: "Employees", link: "admin/dashboard/employees" },
-  { label: "Customers", link: "admin/dashboard/customers" },
-  { label: "Users", link: "admin/dashboard/users" },
+  { label: 'Sales and Revenue', link: 'admin/dashboard/performance' },
+  { label: 'Inventory', link: 'admin/dashboard/products' },
+  { label: 'Orders', link: 'admin/dashboard/orders' },
+  { label: 'Employees', link: 'admin/dashboard/employees' },
+  { label: 'Customers', link: 'admin/dashboard/customers' },
+  { label: 'Users', link: 'admin/dashboard/users' },
 ];
 
 export default function SideBar() {
-  const [active, setActive] = useState("Home");
-  const [activeLink, setActiveLink] = useState("/admin/dashboard/products");
+  const [active, setActive] = useState('Home');
+  const [activeLink, setActiveLink] = useState('/admin/dashboard/products');
 
   const router = useRouter();
   const pathname = usePathname();
@@ -25,9 +25,6 @@ export default function SideBar() {
   useEffect(() => {
     setActiveLink(pathname.slice(1));
   }, [pathname]);
-
-  console.log(pathname, "<<<<pathname");
-  console.log(activeLink, "<<<<<activeLink");
 
   const links = linksMockdata.map((link) => (
     <a
@@ -78,11 +75,11 @@ export default function SideBar() {
           // className={classes.main}
         >
           <Title
-            order={4}
-            className="text-gray-500 font-custom mb- h-[60px] bg-white pt-2 px-4 pb-6 border-b border-solid border-gray-300"
+            order={2}
+            className="text-l text-gray-500 font-custom mb- h-[60px] bg-white pt-2 px-4 pb-6 border-b border-solid border-gray-300"
             // className={classes.title}
           >
-            <h1 className="text-2xl font-black">Home</h1>
+            Dashboard
           </Title>
 
           {links}
@@ -92,44 +89,42 @@ export default function SideBar() {
   );
 }
 
-{
-  // import {
-  //   IconHome2,
-  //   IconGauge,
-  //   IconDeviceDesktopAnalytics,
-  //   IconFingerprint,
-  //   IconCalendarStats,
-  //   IconUser,
-  //   IconSettings,
-  // } from "@tabler/icons-react";
-  // import { MantineLogo } from "@mantine/ds";
-  // const mainLinksMockdata = [
-  //   { label: "Home" },
-  //   { label: "Dashboard" },
-  //   { label: "Analytics" },
-  //   { label: "Releases" },
-  //   { label: "Account" },
-  //   { label: "Security" },
-  //   { label: "Settings" },
-  // ];
-  // const mainLinks = mainLinksMockdata.map((link) => (
-  //   <Tooltip
-  //     label={link.label}
-  //     position="right"
-  //     withArrow
-  //     transitionProps={{ duration: 0 }}
-  //     key={link.label}
-  //   >
-  //     <UnstyledButton
-  //       onClick={() => setActive(link.label)}
-  //       // className={`w-11 h-11 rounded-sm flex items-center justify-center text-gray-700 hover:bg-gray-100 p-4 text-xs mr-6 font-medium active:bg-blue-light active:text-blue-light-color ${
-  //       //   active === link.label ? "bg-green-500 text-red-600" : ""
-  //       // } `}
-  //       className={classes.mainLink}
-  //       data-active={link.label === active || undefined}
-  //     >
-  //       {/* <link.icon style={{ width: rem(22), height: rem(22) }} stroke={1.5} /> */}
-  //     </UnstyledButton>
-  //   </Tooltip>
-  // ));
-}
+// import {
+//   IconHome2,
+//   IconGauge,
+//   IconDeviceDesktopAnalytics,
+//   IconFingerprint,
+//   IconCalendarStats,
+//   IconUser,
+//   IconSettings,
+// } from "@tabler/icons-react";
+// import { MantineLogo } from "@mantine/ds";
+// const mainLinksMockdata = [
+//   { label: "Home" },
+//   { label: "Dashboard" },
+//   { label: "Analytics" },
+//   { label: "Releases" },
+//   { label: "Account" },
+//   { label: "Security" },
+//   { label: "Settings" },
+// ];
+// const mainLinks = mainLinksMockdata.map((link) => (
+//   <Tooltip
+//     label={link.label}
+//     position="right"
+//     withArrow
+//     transitionProps={{ duration: 0 }}
+//     key={link.label}
+//   >
+//     <UnstyledButton
+//       onClick={() => setActive(link.label)}
+//       // className={`w-11 h-11 rounded-sm flex items-center justify-center text-gray-700 hover:bg-gray-100 p-4 text-xs mr-6 font-medium active:bg-blue-light active:text-blue-light-color ${
+//       //   active === link.label ? "bg-green-500 text-red-600" : ""
+//       // } `}
+//       className={classes.mainLink}
+//       data-active={link.label === active || undefined}
+//     >
+//       {/* <link.icon style={{ width: rem(22), height: rem(22) }} stroke={1.5} /> */}
+//     </UnstyledButton>
+//   </Tooltip>
+// ));

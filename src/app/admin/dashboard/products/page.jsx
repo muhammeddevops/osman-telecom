@@ -1,35 +1,50 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { getAllProducts } from "@/utils/query-fake-db";
-import Dialog from "../dbComponents/Dialog";
-import { useDisclosure } from "@mantine/hooks";
-import AddProdForm from "../dbComponents/AddProdForm";
-import Image from "next/image";
-import { Button } from "@mantine/core";
+import Dialog from '../dbComponents/Dialog';
+import { useDisclosure } from '@mantine/hooks';
+import AddProductForm from '../dbComponents/AddProductForm';
+import Image from 'next/image';
+import { Button } from '@mantine/core';
+import otApi from '@/api-requests';
+import { useQuery } from '@tanstack/react-query';
+
+import productPlaceholder from '/public/assets/product-placeholder.jpg';
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
   const [opened, { open, close }] = useDisclosure(false);
 
+  const {
+    data: products,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ['products'],
+    queryFn: otApi.fetchAllProducts,
+  });
+
+  console.log('products:', { isLoading, error, products });
+
   async function onClose() {
-    console.log("Modal has closed");
+    console.log('Modal has closed');
   }
 
   async function onOk() {
-    console.log("Ok was clicked");
+    console.log('Ok was clicked');
   }
 
-  useEffect(() => {
-    setProducts(getAllProducts());
-  });
-
-  console.log(products, "products");
+  if (error)
+    return (
+      <>
+        <h1>No products (products is undefined)</h1>
+        <h1>QUERY ERROR: {error.message}</h1>
+      </>
+    );
+  if (!products?.length || isLoading) return <h1>Loading...</h1>;
 
   return (
     <>
       <Dialog title="Add a product" opened={opened} close={close}>
-        <AddProdForm />
+        <AddProductForm closeModal={close} />
       </Dialog>
       <div className="flex flex-col justify-center items-center ">
         <h1 className="mb-8 font-black text-center text-3xl text-red-600">
@@ -48,17 +63,16 @@ const Products = () => {
             {products.map((product) => {
               return (
                 <div
-                  key={product.id}
+                  key={product._id}
                   className="flex  w-[500px] mb-[20px] bg-white rounded-lg"
-                  // imgAlt="product image"
-                  // imgSrc={product.image}
                 >
                   <Image
-                    src={product.image}
-                    alt="product image"
+                    className="rounded-lg"
+                    // TODO store product images with Firebase and store URL reference in Products collection
+                    src={productPlaceholder}
+                    alt={product.description}
                     width={200}
                     height={200}
-                    className="rounded-lg"
                     // blurDataURL="data:..." automatically provided
                     // placeholder="blur" // Optional blur-up while loading
                   />
@@ -67,7 +81,9 @@ const Products = () => {
                     <h2 className=" mt-2 font-medium text-lg">
                       {product.name}
                     </h2>
-                    <p className="mb-[30px] font-light ">{product.category}</p>
+                    <p className="mb-[30px] font-light ">
+                      {product.categories}
+                    </p>
                     <p className="text-2xl font-extrabold">
                       £{product.price.toFixed(2)}
                     </p>
