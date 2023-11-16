@@ -3,6 +3,7 @@
 import { useForm } from 'react-hook-form';
 import validateForm from '@/utils/validate-form';
 import { signIn } from 'next-auth/react';
+import { Button } from '@mantine/core';
 
 /** TODO input validation
  * email -> ensure valid email is entered ✅
@@ -27,7 +28,6 @@ export default function RegisterForm() {
   if (Object.keys(errors).length) console.log('errors:', errors);
 
   const onSubmit = async (data, e) => {
-    // throw new Error('I hate error handling');
     console.log('input values:', data);
     const form = e.target;
 
@@ -172,13 +172,13 @@ export default function RegisterForm() {
           )}
         </div>
 
-        <button
+        <Button
           type="submit"
           className="font-bold uppercase bg-red-600 text-white px-8 py-4 rounded-md disabled:bg-slate-700"
           disabled={isSubmitting}
         >
           Register
-        </button>
+        </Button>
       </form>
     </div>
   );

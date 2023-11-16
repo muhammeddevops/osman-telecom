@@ -1,0 +1,154 @@
+[
+  {
+    "name": "Smartphone",
+    "description": "High-end smartphone with all the latest features.",
+    "categories": ["Electronics"],
+    "price": 799.99,
+    "quantity": 50,
+    "image": "/smartphone.jpg"
+  },
+  {
+    "name": "Laptop",
+    "description": "Powerful laptop for work and entertainment.",
+    "categories": ["Electronics"],
+    "price": 1299.99,
+    "quantity": 30,
+    "image": "/laptop.jpg"
+  },
+  {
+    "name": "LED TV",
+    "description": "55-inch 4K LED TV with stunning picture quality.",
+    "categories": ["Electronics"],
+    "price": 699.99,
+    "quantity": 20,
+    "image": "/led_tv.jpg"
+  },
+  {
+    "name": "Refrigerator",
+    "description": "Energy-efficient refrigerator with ample storage space.",
+    "categories": ["Electronics", "Appliances"],
+    "price": 899.99,
+    "quantity": 15,
+    "image": "/refrigerator.jpg"
+  },
+  {
+    "name": "Rice",
+    "description": "Premium long-grain rice for your meals.",
+    "categories": ["Groceries"],
+    "price": 5.99,
+    "quantity": 100,
+    "image": "/rice.jpg"
+  },
+  {
+    "name": "Apples",
+    "description": "Fresh and crisp apples for a healthy snack.",
+    "categories": ["Groceries"],
+    "price": 2.99,
+    "quantity": 200,
+    "image": "/apples.jpg"
+  },
+  {
+    "name": "Headphones",
+    "description": "High-quality over-ear headphones for music enthusiasts.",
+    "categories": ["Electronics"],
+    "price": 129.99,
+    "quantity": 40,
+    "image": "/headphones.jpg"
+  },
+  {
+    "name": "Washing Machine",
+    "description": "Front-loading washing machine with multiple wash programs.",
+    "categories": ["Electronics", "Appliances"],
+    "price": 699.99,
+    "quantity": 25,
+    "image": "/washing_machine.jpg"
+  },
+  {
+    "name": "Milk",
+    "description": "Fresh and nutritious cow's milk.",
+    "categories": ["Groceries"],
+    "price": 3.49,
+    "quantity": 150,
+    "image": "/milk.jpg"
+  },
+  {
+    "name": "Microwave Oven",
+    "description": "Compact microwave oven for quick heating and cooking.",
+    "categories": ["Electronics", "Appliances"],
+    "price": 149.99,
+    "quantity": 30,
+    "image": "/microwave_oven.jpg"
+  },
+  {
+    "name": "Bananas",
+    "description": "Ripe and delicious bananas for a healthy snack.",
+    "categories": ["Groceries"],
+    "price": 1.99,
+    "quantity": 100,
+    "image": "/bananas.jpg"
+  },
+  {
+    "name": "Digital Camera",
+    "description": "High-resolution digital camera for capturing memories.",
+    "categories": ["Electronics"],
+    "price": 499.99,
+    "quantity": 20,
+    "image": "/digital_camera.jpg"
+  },
+  {
+    "name": "Cereals",
+    "description": "Assorted breakfast cereals for a quick morning meal.",
+    "categories": ["Groceries"],
+    "price": 4.99,
+    "quantity": 80,
+    "image": "/cereals.jpg"
+  },
+  {
+    "name": "Toaster",
+    "description": "Two-slice toaster for crispy morning toast.",
+    "categories": ["Electronics", "Appliances"],
+    "price": 29.99,
+    "quantity": 50,
+    "image": "/toaster.jpg"
+  },
+  {
+    "name": "Carrots",
+    "description": "Fresh and crunchy carrots for salads and cooking.",
+    "categories": ["Groceries"],
+    "price": 2.49,
+    "quantity": 120,
+    "image": "/carrots.jpg"
+  },
+  {
+    "name": "Smartwatch",
+    "description": "Feature-packed smartwatch for fitness and notifications.",
+    "categories": ["Electronics"],
+    "price": 199.99,
+    "quantity": 35,
+    "image": "/smartwatch.jpg"
+  },
+  {
+    "name": "Canned Soup",
+    "description": "Assorted canned soups for a quick and easy meal.",
+    "categories": ["Groceries"],
+    "price": 2.99,
+    "quantity": 60,
+    "image": "/canned_soup.jpg"
+  },
+  {
+    "name": "Blender",
+    "description": "High-speed blender for smoothies and food preparation.",
+    "categories": ["Electronics", "Appliances"],
+    "price": 79.99,
+    "quantity": 40,
+    "image": "/blender.jpg"
+  },
+  {
+    "name": "Potatoes",
+    "description": "Fresh and versatile potatoes for various dishes.",
+    "categories": ["Groceries"],
+    "price": 3.29,
+    "quantity": 90,
+    "image": "/potatoes.jpg"
+  }
+]

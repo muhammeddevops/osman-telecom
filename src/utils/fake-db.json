@@ -3,15 +3,31 @@
     {
       "id": 1,
       "role": "superuser",
-      "name": "superuser",
+      "name": "Abdullah Osman",
       "email": "superuser@email.com",
       "password": "Test123!",
       "createdAt": "Test123!"
     },
     {
-      "id": 1,
+      "id": 2,
       "role": "basic",
-      "name": "basic",
+      "name": "Mahmoud Osman",
+      "email": "basic@email.com",
+      "password": "Test456!",
+      "createdAt": "Test456!"
+    },
+    {
+      "id": 3,
+      "role": "superuser",
+      "name": "Abdullah Osman",
+      "email": "superuser@email.com",
+      "password": "Test123!",
+      "createdAt": "Test123!"
+    },
+    {
+      "id": 4,
+      "role": "basic",
+      "name": "Mahmoud Osman",
       "email": "basic@email.com",
       "password": "Test456!",
       "createdAt": "Test456!"
@@ -20,31 +36,761 @@
   "products": [
     {
       "id": 1,
-      "name": "Product 1",
-      "description": "Product 1 description",
-      "category": "category",
-      "price": 1.0
+      "name": "Brown Large Free Range Eggs 6 Pack",
+      "description": "Half a dozen free range eggs",
+      "category": "Food item",
+      "price": 2.98,
+      "quantity": 35,
+      "image": "/assets/eggs.avif"
     },
     {
       "id": 2,
-      "name": "Product 2",
-      "description": "Product 2 description",
-      "category": "category",
-      "price": 2.0
+      "name": "Red Grapefruit Each",
+      "description": "Grapefruits, sold per item",
+      "category": "Food item",
+      "price": 0.5,
+      "quantity": 50,
+      "image": "/assets/grapefruit.jpeg"
     },
     {
       "id": 3,
-      "name": "Product 3",
-      "description": "Product 3 description",
-      "category": "category",
-      "price": 3.0
+      "name": "Ripen At Home Peach Minimum 8 Pack",
+      "description": "Peaches to ripen at home. Each pack will have at least 8 peaches",
+      "category": "Food item",
+      "price": 3.0,
+      "quantity": 85,
+      "image": "/assets/peach.avif"
     },
     {
       "id": 4,
-      "name": "Product 4",
-      "description": "Product 4 description",
-      "category": "category",
-      "price": 4.0
+      "name": "Watermelon",
+      "description": "Watermelon",
+      "category": "Food item",
+      "price": 7.0,
+      "quantity": 73,
+      "image": "/assets/watermelon.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "Large Pink Lady Apples Class 1 Loose",
+      "description": "Loose apples",
+      "category": "Food item",
+      "price": 0.45,
+      "quantity": 28,
+      "image": "/assets/apple.png"
+    }
+  ],
+  "orders": [
+    {
+      "orderId": 1,
+      "status": "delivered",
+      "noOfItems": 7,
+      "customerName": "Bilaal Ahmed",
+      "registeredAcc": true,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ],
+      "deliveryAddress": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      }
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ],
+      "deliveryAddress": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      }
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ],
+      "deliveryAddress": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      }
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ],
+      "deliveryAddress": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      }
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ],
+      "deliveryAddress": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      }
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ],
+      "deliveryAddress": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      }
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ],
+      "deliveryAddress": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      }
+    },
+    {
+      "orderId": 2,
+      "status": "pending",
+      "noOfItems": 7,
+      "customerName": "Mark Smith",
+      "registeredAcc": false,
+      "goodsAmount": 15,
+      "deliveryAmount": 5,
+      "totalAmount": 20,
+      "items": [
+        { "name": "Red Grapefruit Each", "quantity": 5, "productId": 2 },
+        { "name": "Watermelon", "quantity": 1, "productId": 4 },
+        {
+          "name": "Brown Large Free Range Eggs 6 Pack",
+          "quantity": 1,
+          "productId": 1
+        }
+      ],
+      "deliveryAddress": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      }
+    }
+  ],
+
+  "customers": [
+    {
+      "id": 1,
+      "role": "wholesale",
+      "name": "Bilaal Ahmed",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 4,
+        "regularOrders": 0
+      },
+      "amountSpent": 1200,
+      "pointsEarned": 240,
+      "discountAvailable": 120,
+      "credit": 370,
+      "creditLimit": 500,
+      "debit": 0,
+      "address": {
+        "firstLine": "5 Hamilton Road",
+        "secondLine": "Longsight",
+        "city": "Manchester",
+        "postCode": "M19 2JZ"
+      },
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "role": "regular",
+      "name": "Jack Jones",
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 0,
+        "regularOrders": 10
+      },
+      "amountSpent": 120,
+      "pointsEarned": 24,
+      "discountAvailable": 12,
+      "credit": 0,
+      "creditLimit": 0,
+      "debit": 0,
+      "address": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "role": "wholesale",
+      "name": "Aadil Ihsaan",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 8,
+        "regularOrders": 0
+      },
+      "amountSpent": 2400,
+      "pointsEarned": 480,
+      "discountAvailable": 240,
+      "credit": 400,
+      "creditLimit": 1000,
+      "debit": 0,
+      "address": {
+        "firstLine": "10 Dukes Avenue",
+        "secondLine": "Sparkhill",
+        "city": "Birmingham",
+        "postCode": "B19 9RE"
+      },
+      "status": "active"
+    },
+    {
+      "id": 4,
+      "role": "wholesale",
+      "name": "Bilaal Ahmed",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 4,
+        "regularOrders": 0
+      },
+      "amountSpent": 1200,
+      "pointsEarned": 240,
+      "discountAvailable": 120,
+      "credit": 200,
+      "creditLimit": 500,
+      "debit": 0,
+      "address": {
+        "firstLine": "5 Hamilton Road",
+        "secondLine": "Longsight",
+        "city": "Manchester",
+        "postCode": "M19 2JZ"
+      },
+      "status": "active"
+    },
+    {
+      "id": 5,
+      "role": "wholesale",
+      "name": "Bilaal Ahmed",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 4,
+        "regularOrders": 0
+      },
+      "amountSpent": 1200,
+      "pointsEarned": 240,
+      "discountAvailable": 120,
+      "credit": 200,
+      "creditLimit": 500,
+      "debit": 0,
+      "address": {
+        "firstLine": "5 Hamilton Road",
+        "secondLine": "Longsight",
+        "city": "Manchester",
+        "postCode": "M19 2JZ"
+      },
+      "status": "active"
+    },
+    {
+      "id": 6,
+      "role": "wholesale",
+      "name": "Bilaal Ahmed",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 4,
+        "regularOrders": 0
+      },
+      "amountSpent": 1200,
+      "pointsEarned": 240,
+      "discountAvailable": 120,
+      "credit": 200,
+      "creditLimit": 500,
+      "debit": 0,
+      "address": {
+        "firstLine": "5 Hamilton Road",
+        "secondLine": "Longsight",
+        "city": "Manchester",
+        "postCode": "M19 2JZ"
+      },
+      "status": "active"
+    },
+    {
+      "id": 7,
+      "role": "regular",
+      "name": "Jack Jones",
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 0,
+        "regularOrders": 10
+      },
+      "amountSpent": 120,
+      "pointsEarned": 24,
+      "discountAvailable": 12,
+      "credit": 0,
+      "creditLimit": 0,
+      "debit": 0,
+      "address": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "status": "active"
+    },
+    {
+      "id": 8,
+      "role": "wholesale",
+      "name": "Aadil Ihsaan",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 8,
+        "regularOrders": 0
+      },
+      "amountSpent": 2400,
+      "pointsEarned": 480,
+      "discountAvailable": 240,
+      "credit": 400,
+      "creditLimit": 1000,
+      "debit": 0,
+      "address": {
+        "firstLine": "10 Dukes Avenue",
+        "secondLine": "Sparkhill",
+        "city": "Birmingham",
+        "postCode": "B19 9RE"
+      },
+      "status": "active"
+    },
+    {
+      "id": 9,
+      "role": "wholesale",
+      "name": "Bilaal Ahmed",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 4,
+        "regularOrders": 0
+      },
+      "amountSpent": 1200,
+      "pointsEarned": 240,
+      "discountAvailable": 120,
+      "credit": 200,
+      "creditLimit": 500,
+      "debit": 0,
+      "address": {
+        "firstLine": "5 Hamilton Road",
+        "secondLine": "Longsight",
+        "city": "Manchester",
+        "postCode": "M19 2JZ"
+      },
+      "status": "active"
+    },
+    {
+      "id": 10,
+      "role": "wholesale",
+      "name": "Bilaal Ahmed",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 4,
+        "regularOrders": 0
+      },
+      "amountSpent": 1200,
+      "pointsEarned": 240,
+      "discountAvailable": 120,
+      "credit": 200,
+      "creditLimit": 500,
+      "debit": 0,
+      "address": {
+        "firstLine": "5 Hamilton Road",
+        "secondLine": "Longsight",
+        "city": "Manchester",
+        "postCode": "M19 2JZ"
+      },
+      "status": "active"
+    },
+    {
+      "id": 11,
+      "role": "regular",
+      "name": "Jack Jones",
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 0,
+        "regularOrders": 10
+      },
+      "amountSpent": 120,
+      "pointsEarned": 24,
+      "discountAvailable": 12,
+      "credit": 0,
+      "creditLimit": 0,
+      "debit": 0,
+      "address": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "status": "active"
+    },
+    {
+      "id": 12,
+      "role": "wholesale",
+      "name": "Aadil Ihsaan",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 8,
+        "regularOrders": 0
+      },
+      "amountSpent": 2400,
+      "pointsEarned": 480,
+      "discountAvailable": 240,
+      "credit": 400,
+      "creditLimit": 1000,
+      "debit": 0,
+      "address": {
+        "firstLine": "10 Dukes Avenue",
+        "secondLine": "Sparkhill",
+        "city": "Birmingham",
+        "postCode": "B19 9RE"
+      },
+      "status": "active"
+    },
+    {
+      "id": 13,
+      "role": "wholesale",
+      "name": "Bilaal Ahmed",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 4,
+        "regularOrders": 0
+      },
+      "amountSpent": 1200,
+      "pointsEarned": 240,
+      "discountAvailable": 120,
+      "credit": 200,
+      "creditLimit": 500,
+      "debit": 0,
+      "address": {
+        "firstLine": "5 Hamilton Road",
+        "secondLine": "Longsight",
+        "city": "Manchester",
+        "postCode": "M19 2JZ"
+      },
+      "status": "active"
+    },
+    {
+      "id": 14,
+      "role": "regular",
+      "name": "Jack Jones",
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 0,
+        "regularOrders": 10
+      },
+      "amountSpent": 120,
+      "pointsEarned": 24,
+      "discountAvailable": 12,
+      "credit": 0,
+      "creditLimit": 0,
+      "debit": 0,
+      "address": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "status": "active"
+    },
+    {
+      "id": 15,
+      "role": "wholesale",
+      "name": "Aadil Ihsaan",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 8,
+        "regularOrders": 0
+      },
+      "amountSpent": 2400,
+      "pointsEarned": 480,
+      "discountAvailable": 240,
+      "credit": 400,
+      "creditLimit": 1000,
+      "debit": 0,
+      "address": {
+        "firstLine": "10 Dukes Avenue",
+        "secondLine": "Sparkhill",
+        "city": "Birmingham",
+        "postCode": "B19 9RE"
+      },
+      "status": "active"
+    },
+    {
+      "id": 16,
+      "role": "regular",
+      "name": "Jack Jones",
+      "contactDetails": {
+        "email": "regular@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 0,
+        "regularOrders": 10
+      },
+      "amountSpent": 120,
+      "pointsEarned": 24,
+      "discountAvailable": 12,
+      "credit": 0,
+      "creditLimit": 0,
+      "debit": 0,
+      "address": {
+        "firstLine": "15 Crossley Road",
+        "secondLine": "Burnage",
+        "city": "Manchester",
+        "postCode": "M17 3QR"
+      },
+      "status": "active"
+    },
+    {
+      "id": 17,
+      "role": "wholesale",
+      "name": "Aadil Ihsaan",
+      "contactDetails": {
+        "email": "wholesale@email.com",
+        "phone": "07123456789"
+      },
+      "orderHistory": {
+        "wholesaleOrders": 8,
+        "regularOrders": 0
+      },
+      "amountSpent": 2400,
+      "pointsEarned": 480,
+      "discountAvailable": 240,
+      "credit": 400,
+      "creditLimit": 1000,
+      "debit": 0,
+      "address": {
+        "firstLine": "10 Dukes Avenue",
+        "secondLine": "Sparkhill",
+        "city": "Birmingham",
+        "postCode": "B19 9RE"
+      },
+      "status": "active"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "position": "cashier",
+      "name": "Abdullah Osman",
+      "email": "superuser@email.com",
+      "password": "Test123!",
+      "createdAt": "Test123!"
+    },
+    {
+      "id": 2,
+      "position": "delivery driver",
+      "name": "Mahmoud Osman",
+      "email": "basic@email.com",
+      "password": "Test456!",
+      "createdAt": "Test456!"
+    },
+    {
+      "id": 3,
+      "position": "cleaner",
+      "name": "Abdullah Osman",
+      "email": "superuser@email.com",
+      "password": "Test123!",
+      "createdAt": "Test123!"
+    },
+    {
+      "id": 4,
+      "position": "manager",
+      "name": "Mahmoud Osman",
+      "email": "basic@email.com",
+      "password": "Test456!",
+      "createdAt": "Test456!"
     }
   ]
 }

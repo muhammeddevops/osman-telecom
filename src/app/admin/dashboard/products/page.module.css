@@ -1,0 +1,20 @@
+.layout {
+  display: grid;
+  grid-template-rows: 1fr 9fr; /* 1/10 and 9/10 of the height */
+  grid-template-columns: 1fr 6fr; /* 1/7 and 6/7 of the width */
+  grid-template-areas:
+    "navbar navbar"
+    "sidebar main";
+}
+
+.navbar {
+  grid-area: navbar;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.main {
+  grid-area: main;
+}

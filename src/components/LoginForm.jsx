@@ -6,6 +6,7 @@ import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
 import validateForm from '@/utils/validate-form';
+import { Button } from '@mantine/core';
 
 export default function LoginForm({ title }) {
   const router = useRouter();
@@ -98,13 +99,13 @@ export default function LoginForm({ title }) {
           )}
         </div>
 
-        <button
+        <Button
           type="submit"
           className="font-bold uppercase bg-red-600 text-white px-8 py-4 rounded-md"
           disabled={isSubmitting}
         >
           Login
-        </button>
+        </Button>
       </form>
     </div>
   );
