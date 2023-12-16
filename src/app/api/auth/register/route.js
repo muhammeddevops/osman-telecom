@@ -23,7 +23,11 @@ export async function POST(req) {
     }
 
     // Register new user
-    const newUser = await User.create({ email, password });
+    const newUser = await User.create({
+      email,
+      password,
+      provider: 'credentials',
+    });
     console.log('User created successfully');
 
     return NextResponse.json({ newUser });

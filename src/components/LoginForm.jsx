@@ -6,8 +6,9 @@ import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
 import validateForm from '@/utils/validate-form';
-import { Button, PasswordInput, TextInput } from '@mantine/core';
+import { Button, Divider, PasswordInput, TextInput } from '@mantine/core';
 import { Notifications, notifications } from '@mantine/notifications';
+import GoogleAuthButton from './GoogleAuthButton';
 
 export default function LoginForm({ title }) {
   const router = useRouter();
@@ -79,6 +80,15 @@ export default function LoginForm({ title }) {
         className="flex flex-col gap-8 justify-center items-center w-96"
         noValidate
       >
+        <GoogleAuthButton />
+        <Divider
+          className="w-[100%] text-md"
+          label="OR"
+          size="md"
+          my="xs"
+          labelPosition="center"
+        />
+
         <TextInput
           id="email"
           className="w-full"
@@ -113,6 +123,7 @@ export default function LoginForm({ title }) {
           className="font-bold uppercase text-black px-8 py-4 rounded-md disabled:bg-slate-700"
           color="red"
           disabled={isSubmitting}
+          fullWidth
         >
           Login
         </Button>

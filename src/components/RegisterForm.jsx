@@ -3,8 +3,9 @@
 import { useForm } from 'react-hook-form';
 import validateForm from '@/utils/validate-form';
 import { signIn } from 'next-auth/react';
-import { Button, PasswordInput, TextInput } from '@mantine/core';
+import { Button, Divider, PasswordInput, TextInput } from '@mantine/core';
 import { Notifications, notifications } from '@mantine/notifications';
+import GoogleAuthButton from './GoogleAuthButton';
 
 /** TODO input validation
  * email -> ensure valid email is entered ✅
@@ -99,6 +100,15 @@ export default function RegisterForm() {
         noValidate
         method="POST"
       >
+        <GoogleAuthButton />
+        <Divider
+          className="w-[100%] text-md"
+          label="OR"
+          size="md"
+          my="xs"
+          labelPosition="center"
+        />
+
         <TextInput
           id="email"
           className="w-full"
