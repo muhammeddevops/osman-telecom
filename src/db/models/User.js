@@ -50,7 +50,6 @@ const userSchema = new Schema(
     },
     password: {
       type: String,
-      required: [true, 'Password is required'],
       minLength: [8, 'Must contain at least 8 characters'],
       maxLength: [16, 'Must not exceed length of 16 characters'],
 
@@ -76,8 +75,9 @@ const userSchema = new Schema(
         message: '{VALUE} is not a valid role',
       },
     },
+    provider: String,
+    image: String,
   },
-
   { timestamps: true }
 );
 

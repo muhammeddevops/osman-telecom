@@ -3,7 +3,9 @@
 import { useForm } from 'react-hook-form';
 import validateForm from '@/utils/validate-form';
 import { signIn } from 'next-auth/react';
-import { Button } from '@mantine/core';
+import { Button, Divider, PasswordInput, TextInput } from '@mantine/core';
+import { Notifications, notifications } from '@mantine/notifications';
+import GoogleAuthButton from './GoogleAuthButton';
 
 /** TODO input validation
  * email -> ensure valid email is entered ✅
@@ -54,6 +56,8 @@ export default function RegisterForm() {
         callbackUrl: '/', // redirect user to home
       });
     } catch (err) {
+      console.log('Error on Registration:', err);
+
       // Handle server-side errors
       if (process.env.NODE_ENV === 'development') {
         console.log(`${err.name ?? 'RegistrationError'}:`, err);
@@ -75,13 +79,20 @@ export default function RegisterForm() {
         }
       }
 
-      // TODO 500: Internal Server Error - display with React Toast or similar
-      console.log(err);
+      //  500: Internal Server Error
+      if (err.name === 'InternalServerError') {
+        notifications.show({
+          title: err.message + ' 😕',
+          message: 'Try again later',
+          color: 'red',
+        });
+      }
     }
   };
 
   return (
-    <div className="flex flex-col justify-center items-center gap-10 border border-slate-950 px-8 py-10 rounded-md">
+    <div className="flex flex-col justify-center items-center gap-10 border border-slate-950 px-12 py-10 rounded-md">
+      <Notifications position="top-center" />
       <h1 className="text-center text-4xl">Sign up</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -89,92 +100,75 @@ export default function RegisterForm() {
         noValidate
         method="POST"
       >
-        <div className="form-group">
-          <label htmlFor="email" className="form-label">
-            Email
-          </label>
+        <GoogleAuthButton />
+        <Divider
+          className="w-[100%] text-md"
+          label="OR"
+          size="md"
+          my="xs"
+          labelPosition="center"
+        />
 
-          <input
-            id="email"
-            className="form-input"
-            type="text"
-            placeholder="Enter your email..."
-            {...register('email', {
-              required: validateForm.required('email'),
-              validate: (value) => validateForm.email(value),
-            })}
-          />
+        <TextInput
+          id="email"
+          className="w-full"
+          label="Email"
+          withAsterisk
+          placeholder="Enter your email..."
+          {...register('email', {
+            required: validateForm.required('email'),
+            validate: (value) => validateForm.email(value),
+          })}
+          error={errors.email?.message}
+          size="lg"
+        />
 
-          {errors.email?.message && (
-            <p className="text-red-600 font-semibold">
-              * {errors.email.message}
-            </p>
-          )}
-        </div>
+        <PasswordInput
+          id="password"
+          className="w-full"
+          label="Password"
+          withAsterisk
+          placeholder="Enter your password..."
+          {...register('password', {
+            required: validateForm.required('password'),
+            validate: (value) => validateForm.registerPassword(value),
+            onBlur: () => {
+              // Manually revalidate confirmPassword when the field has been touched & its error type is not 'required'
+              if (
+                touchedFields.confirmPassword &&
+                errors.confirmPassword?.type !== 'required'
+              ) {
+                trigger('confirmPassword');
+              }
+            },
+          })}
+          error={errors.password?.message}
+          size="lg"
+        />
 
-        <div className="form-group">
-          <label htmlFor="password" className="form-label">
-            Password
-          </label>
-
-          <input
-            id="password"
-            className="form-input"
-            type="password"
-            placeholder="Enter your password..."
-            {...register('password', {
-              required: validateForm.required('password'),
-              validate: (value) => validateForm.registerPassword(value),
-              onBlur: () => {
-                // Manually revalidate confirmPassword when the field has been touched & its error type is not 'required'
-                if (
-                  touchedFields.confirmPassword &&
-                  errors.confirmPassword?.type !== 'required'
-                ) {
-                  trigger('confirmPassword');
-                }
-              },
-            })}
-          />
-
-          {errors.password?.message && (
-            <p className="text-red-600 font-semibold">
-              * {errors.password.message}
-            </p>
-          )}
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="confirm-password" className="form-label">
-            Confirm Password
-          </label>
-
-          <input
-            id="confirm-password"
-            className="form-input"
-            type="password"
-            placeholder="Confirm your password..."
-            {...register('confirmPassword', {
-              required: validateForm.required(),
-              validate: (_, values) => {
-                return validateForm.confirmPasswordsMatch(
-                  values.password,
-                  values.confirmPassword
-                );
-              },
-            })}
-          />
-
-          {errors.confirmPassword?.message && (
-            <p className="text-red-600 font-semibold">
-              * {errors.confirmPassword.message}
-            </p>
-          )}
-        </div>
+        <PasswordInput
+          id="confirm-password"
+          className="w-full"
+          label="Confirm Password"
+          withAsterisk
+          placeholder="Confirm your password..."
+          {...register('confirmPassword', {
+            required: validateForm.required(),
+            validate: (_, values) => {
+              return validateForm.confirmPasswordsMatch(
+                values.password,
+                values.confirmPassword
+              );
+            },
+          })}
+          error={errors.confirmPassword?.message}
+          size="lg"
+        />
 
         <Button
           type="submit"
-          className="font-bold uppercase bg-red-600 text-white px-8 py-4 rounded-md disabled:bg-slate-700"
+          className="font-bold uppercase text-white px-8 py-4 rounded-md disabled:bg-slate-700"
+          color="red"
           disabled={isSubmitting}
         >
           Register

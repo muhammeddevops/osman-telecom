@@ -9,45 +9,58 @@ export async function POST(req) {
   console.log('FormData:', { email, password, confirmPassword });
 
   try {
-    // passwords match
-    if (password !== confirmPassword) {
+    // Check if user with given email already exists
+    const user = await User.findOne({ email });
+    if (user) {
+      const error = new Error('Email already in use');
+      throw error;
+    }
+
+    // Confirm passwords match
+    if (password.length && password !== confirmPassword) {
       const error = new Error("Passwords don't match");
       throw error;
     }
 
     // Register new user
-    const newUser = await User.create({ email, password });
+    const newUser = await User.create({
+      email,
+      password,
+      provider: 'credentials',
+    });
     console.log('User created successfully');
-
-    // TODO NextAuth - handle login & sessions
 
     return NextResponse.json({ newUser });
   } catch (err) {
-    // TODO 400 - NextAuth - handle in Credential Provider?
-
-    // ✅ TODO 400 - Mongoose
-    //  Handle E11000 duplicate key error - email already in use
-    //  Handle ValidationError
-
-    // ✅ TODO 500
-
     console.log('Error on Registration:', err);
+
     const errors = {};
+
+    // Email already in use - manual check for existing email
+    if (err.message === 'Email already in use') {
+      console.log('err.message:', err.message);
+      errors.email = err.message;
+      return NextResponse.json(
+        { name: 'DuplicateKeyError', errors },
+        { status: 400 }
+      );
+    }
+
+    // MongoServerError - Duplicate email error (email already in use)
+    // NOTE: checking/throwing error manually (as done above) validates fields in order
+    /*  if (err.name === 'MongoServerError' && err.code === 11000) {
+      errors.email = 'Email already in use';
+      return NextResponse.json(
+        { name: 'DuplicateKeyError', errors },
+        { status: 400 }
+      );
+    } */
 
     // Passwords don't match
     if (err.message === "Passwords don't match") {
       errors.confirmPassword = err.message;
       return NextResponse.json(
         { name: 'PasswordConfirmationFailed', errors },
-        { status: 400 }
-      );
-    }
-
-    // Duplicate email error (email already in use)
-    if (err.name === 'MongoServerError' && err.code === 11000) {
-      errors.email = 'Email already in use';
-      return NextResponse.json(
-        { name: 'DuplicateKeyError', errors },
         { status: 400 }
       );
     }
@@ -67,7 +80,7 @@ export async function POST(req) {
 
     // Internal Server Error
     return NextResponse.json(
-      { message: 'Something went wrong, please try again later' },
+      { name: 'InternalServerError', message: 'Something went wrong' },
       { status: 500 }
     );
   }
